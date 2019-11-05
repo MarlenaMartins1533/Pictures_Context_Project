@@ -14,4 +14,7 @@
     <string name="menu_share">Share</string>
     <string name="menu_send">Send</string>
     <string name="desc_app">App para suas melhores imagens.</string>
+    <string name="welcome_text">Seja bem vinda(o)!</string>
+    <string name="image_title">Título da Imagem</string>
+    <string name="image_id">ID</string>
 </resources>
