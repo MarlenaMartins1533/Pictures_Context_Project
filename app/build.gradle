@@ -6,6 +6,13 @@ apply plugin: 'kotlin-android-extensions'
 
 android {
     compileSdkVersion 28
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8
+        targetCompatibility = JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8
+    }
     defaultConfig {
         applicationId "com.marlena.pictures_context_project"
         minSdkVersion 21

@@ -1,10 +1,9 @@
 package com.marlena.pictures_context_project.ui
 
-import android.widget.ImageView
+import androidx.annotation.DrawableRes
 
-class PictureModel {
-
-    lateinit var image_drawable: ImageView
-    val id: Int = 0
+data class PictureModel (
+    @DrawableRes val image_drawable: Int,
+    val id: Int,
     val name: String = ""
-}
+)

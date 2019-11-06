@@ -10,7 +10,6 @@ import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.ui.PictureModel
 import com.marlena.pictures_context_project.ui.adapter.PictureRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_gallery_1.*
-import kotlinx.android.synthetic.main.item_picture.*
 
 class Gallery1Fragment : Fragment() {
 
@@ -27,17 +26,17 @@ class Gallery1Fragment : Fragment() {
 
         val list = arrayListOf(
             PictureModel(
-                image_drawable = imageIMG.setImageResource(R.drawable.gatinho_marrom),
+                image_drawable = R.drawable.gatinho_marrom,
                 id = 1,
                 name = "Gatinho Marrom"
             ),
             PictureModel(
-                image_drawable = imageIMG.setImageResource(R.drawable.gatinho_nenem),
+                image_drawable = R.drawable.gatinho_no_jardim,
                 id = 2,
                 name = "Gatinho Nenem"
             ),
             PictureModel(
-                image_drawable = imageIMG.setImageResource(R.drawable.gatinho_no_jardim),
+                image_drawable = R.drawable.gatinho_no_jardim,
                 id = 3,
                 name = "Gatinho No Jardim"
             )
