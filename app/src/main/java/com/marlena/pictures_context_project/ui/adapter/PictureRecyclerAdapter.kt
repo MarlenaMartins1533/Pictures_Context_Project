@@ -20,7 +20,7 @@ class PictureRecyclerAdapter(private val pictureList: ArrayList<PictureModel>): 
 
         with(holder.itemView){
             image_titleTXT?.text = pictureList[position].name
-//            imageIMG.setImageResource(R.drawable.)
+            imageIMG.setImageResource(pictureList[position].image_drawable)
             image_idTXT?.text = "$position"
         }
     }
