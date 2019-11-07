@@ -7,7 +7,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.marlena.pictures_context_project.R
-import com.marlena.pictures_context_project.ui.PictureModel
+import com.marlena.pictures_context_project.ui.Picture
 import com.marlena.pictures_context_project.ui.adapter.PictureRecyclerAdapter
 import kotlinx.android.synthetic.main.fragment_gallery_1.*
 
@@ -25,20 +25,50 @@ class Gallery1Fragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         val list = arrayListOf(
-            PictureModel(
-                image_drawable = R.drawable.gatinho_marrom,
+            Picture(
+                image_drawable = R.drawable.l_furtacor,
                 id = 1,
-                name = "Gatinho Marrom"
+                name = "FurtaCor"
             ),
-            PictureModel(
-                image_drawable = R.drawable.gatinho_no_jardim,
+            Picture(
+                image_drawable = R.drawable.l_paz_roxa,
                 id = 2,
-                name = "Gatinho Nenem"
+                name = "Paz Roxa"
             ),
-            PictureModel(
-                image_drawable = R.drawable.gatinho_no_jardim,
+            Picture(
+                image_drawable = R.drawable.l_por_do_sol,
                 id = 3,
-                name = "Gatinho No Jardim"
+                name = "Lindo Por do Sol"
+            ),
+            Picture(
+                image_drawable = R.drawable.l_alone,
+                id = 4,
+                name = "Banco e luz"
+            ),
+            Picture(
+                image_drawable = R.drawable.l_dashbashi,
+                id = 5,
+                name = "Cachoeira"
+            ),
+            Picture(
+                image_drawable = R.drawable.l_emotional_scenery,
+                id = 6,
+                name = "Envolvente e caloroso"
+            ),
+            Picture(
+                image_drawable = R.drawable.l_ice,
+                id = 7,
+                name = "Gelo e serenidade"
+            ),
+            Picture(
+                image_drawable = R.drawable.l_river,
+                id = 8,
+                name = "Inspirador e verde"
+            ),
+            Picture(
+                image_drawable = R.drawable.l_shinning,
+                id = 9,
+                name = "Brilho dourado"
             )
         )
 

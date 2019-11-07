@@ -12,7 +12,6 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.Toolbar
 import android.view.Menu
 import com.marlena.pictures_context_project.R
-import androidx.navigation.ui.AppBarConfiguration as AppBarConfiguration1
 
 class MainActivity : AppCompatActivity() {
 
