@@ -26,48 +26,39 @@ class Gallery1Fragment : Fragment() {
 
         val list = arrayListOf(
             Picture(
-                image_drawable = R.drawable.l_furtacor,
-                id = 1,
+                id_url = 1,
                 name = "FurtaCor"
             ),
             Picture(
-                image_drawable = R.drawable.l_paz_roxa,
-                id = 2,
+                 id_url = 2,
                 name = "Paz Roxa"
             ),
             Picture(
-                image_drawable = R.drawable.l_por_do_sol,
-                id = 3,
+                 id_url = 3,
                 name = "Lindo Por do Sol"
             ),
             Picture(
-                image_drawable = R.drawable.l_alone,
-                id = 4,
+                 id_url = 4,
                 name = "Banco e luz"
             ),
             Picture(
-                image_drawable = R.drawable.l_dashbashi,
-                id = 5,
+                 id_url = 5,
                 name = "Cachoeira"
             ),
             Picture(
-                image_drawable = R.drawable.l_emotional_scenery,
-                id = 6,
+                 id_url = 6,
                 name = "Envolvente e caloroso"
             ),
             Picture(
-                image_drawable = R.drawable.l_ice,
-                id = 7,
-                name = "Gelo e serenidade"
+                 id_url = 7,
+                name = "Gelo e seren id_urlade"
             ),
             Picture(
-                image_drawable = R.drawable.l_river,
-                id = 8,
+                 id_url = 8,
                 name = "Inspirador e verde"
             ),
             Picture(
-                image_drawable = R.drawable.l_shinning,
-                id = 9,
+                 id_url = 9,
                 name = "Brilho dourado"
             )
         )
