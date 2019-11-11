@@ -1,5 +1,6 @@
 package com.marlena.pictures_context_project.ui.scenes.gallery_1
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -8,8 +9,11 @@ import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.ui.Picture
 import com.marlena.pictures_context_project.ui.adapter.PictureRecyclerAdapter
-import com.marlena.pictures_context_project.ui.scenes.PictureFragment
+import com.marlena.pictures_context_project.ui.scenes.MainActivity
+import com.marlena.pictures_context_project.ui.scenes.PictureActivity
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_gallery_1.*
+import kotlinx.android.synthetic.main.activity_picture.*
 
 class Gallery1Fragment : Fragment(), PictureRecyclerAdapter.Listener {
 
@@ -81,8 +85,10 @@ class Gallery1Fragment : Fragment(), PictureRecyclerAdapter.Listener {
         recyclerViewRV?.adapter = adapter
     }
 
-    override fun openPictureFragment(pictureFragment: PictureFragment) {
+    override fun openPictureFragment(url: String) {
         //transformar em activity, abrir com transparencia
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+        val intent = Intent(context, PictureActivity::class.java)
+        intent.putExtra("imageUrl", url)
+        startActivity(intent)
     }
 }
