@@ -7,11 +7,10 @@ import androidx.recyclerview.widget.RecyclerView
 import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.ui.Picture
 import com.marlena.pictures_context_project.ui.scenes.PictureFragment
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_picture.view.*
-import kotlinx.android.synthetic.main.picture.view.*
-import java.util.zip.Inflater
 
-class PictureRecyclerAdapter(private val pictureList: ArrayList<Picture>) :
+class PictureRecyclerAdapter(private val pictureList: ArrayList<Picture>, private val listener: Listener) :
     RecyclerView.Adapter<PictureRecyclerAdapter.PictureViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PictureViewHolder {
@@ -19,9 +18,7 @@ class PictureRecyclerAdapter(private val pictureList: ArrayList<Picture>) :
         return PictureViewHolder(view)
     }
 
-    override fun getItemCount(): Int {
-        return pictureList.size
-    }
+    override fun getItemCount() = pictureList.size
 
     override fun onBindViewHolder(holder: PictureViewHolder, position: Int) {
 
@@ -29,16 +26,23 @@ class PictureRecyclerAdapter(private val pictureList: ArrayList<Picture>) :
     }
 
     inner class PictureViewHolder(view: View) : RecyclerView.ViewHolder(view) {
-
         fun bindView(position: Int) {
             itemView.image_titleTXT?.text = pictureList[position].name
-            itemView.imageIMG.setImageResource(pictureList[position].image_drawable)
+
+            Picasso.get()
+                .load(pictureList[position].url)
+                .error(R.drawable.alerta_790x400)
+                .into(itemView.imageIMG)
             itemView.itemCV.isClickable = true
 
             itemView.itemCV.setOnClickListener {
-                PictureFragment.newInstance(pictureList[position].image_drawable)
+                //TODO
+                listener.openPictureFragment(PictureFragment.newInstance(pictureList[position].url))
             }
         }
+    }
 
+    interface Listener {
+        fun openPictureFragment(pictureFragment: PictureFragment)
     }
 }

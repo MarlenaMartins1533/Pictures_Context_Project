@@ -6,9 +6,10 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.picture.*
 
-class PictureFragment(private val image_drawable: Int) : Fragment() {
+class PictureFragment(private val url: String) : Fragment() {
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -20,12 +21,14 @@ class PictureFragment(private val image_drawable: Int) : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        pictureIMG.setImageResource(image_drawable)
+
+        if (url.isEmpty()) pictureIMG.setImageResource(R.drawable.alerta_790x400)
+        else Picasso.get().load(url).into(pictureIMG)
     }
 
     companion object {
-        fun newInstance(image_drawable: Int): PictureFragment {
-            return PictureFragment(image_drawable)
+        fun newInstance(url: String): PictureFragment {
+            return PictureFragment(url)
         }
     }
 }

@@ -33,7 +33,6 @@ class MainActivity : AppCompatActivity() {
             setOf(
                 R.id.nav_home,
                 R.id.nav_gallery_1,
-                R.id.nav_gallery_2,
                 R.id.nav_tools,
                 R.id.nav_share,
                 R.id.nav_send
