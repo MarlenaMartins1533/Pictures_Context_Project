@@ -4,7 +4,6 @@ import androidx.annotation.DrawableRes
 
 data class Picture (
 //    @DrawableRes val image_drawable: Int,
-    val id: Int,
     val url: String = "",
     val name: String = "Atenção"
 )
