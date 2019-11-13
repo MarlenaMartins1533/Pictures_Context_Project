@@ -1,18 +1,16 @@
 package com.marlena.pictures_context_project.ui.adapter
 
-import android.content.Intent
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.ui.Picture
-import com.marlena.pictures_context_project.ui.scenes.PictureActivity
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_picture.view.*
 
-class PictureRecyclerAdapter(private val pictureList: ArrayList<Picture>, private val listener: Listener) :
+class PictureRecyclerAdapter(private val pictureList: ArrayList<Picture>,
+                             private val listener: Listener) :
     RecyclerView.Adapter<PictureRecyclerAdapter.PictureViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PictureViewHolder {
@@ -46,7 +44,6 @@ class PictureRecyclerAdapter(private val pictureList: ArrayList<Picture>, privat
 ////                val intent = Intent(PictureActivity, PictureActivity::class.java)
 ////                intent.putExtra("key", pictureList[position].url)
 ////                listener.openPictureFragment(intent)
-////
             }
         }
     }

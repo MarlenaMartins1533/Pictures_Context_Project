@@ -1,5 +1,6 @@
 package com.marlena.pictures_context_project.ui.scenes.gallery_landscape
 
+import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -7,11 +8,11 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.ui.Picture
-import com.marlena.pictures_context_project.ui.scenes.PictureDialog
 import com.marlena.pictures_context_project.ui.adapter.PictureRecyclerAdapter
+import com.marlena.pictures_context_project.ui.scenes.PictureActivity
 import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 
-class GalleryLandscapeFragment : Fragment(), PictureRecyclerAdapter.Listener{
+class GalleryAnimalFragment : Fragment(), PictureRecyclerAdapter.Listener{
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -114,12 +115,13 @@ class GalleryLandscapeFragment : Fragment(), PictureRecyclerAdapter.Listener{
     override fun openPictureFragment(url: String) {
 
 //        //transformar em activity, abrir com transparencia
-//        val intent = Intent(context, PictureActivity::class.java)
-//        intent.putExtra("imageUrl", url)
-//        startActivity(intent)
+        val intent = Intent(context, PictureActivity::class.java)
+        intent.putExtra("imageUrl", url)
+        startActivity(intent)
 //
-        val dialog = PictureDialog.newInstance(url)
-        dialog.show(childFragmentManager, "Picture Dialog")
+//        val dialog = PictureDialog()
+//        dialog.show()
+
 
 //        AlertDialog.Builder(container).apply {
 //            show()

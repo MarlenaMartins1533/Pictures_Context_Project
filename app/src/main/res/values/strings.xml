@@ -17,4 +17,5 @@
     <string name="welcome_text">Seja bem vindo(a)!</string>
     <string name="image_title">Título da Imagem</string>
     <string name="image_id">ID</string>
+    <string name="menu_gallery_animal">Animals</string>
 </resources>

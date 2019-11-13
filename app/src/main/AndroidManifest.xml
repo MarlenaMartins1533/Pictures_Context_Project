@@ -24,7 +24,8 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.scenes.PictureActivity">
+            android:name=".ui.scenes.PictureActivity"
+            android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
 

@@ -12,7 +12,6 @@
         android:layout_height="wrap_content"
         android:padding="8dp"
         android:background="@drawable/shining_book"
-        android:elevation="5dp"
 
         android:text="@string/welcome_text"
         android:textAlignment="center"
@@ -35,12 +34,13 @@
         android:background="@drawable/shape_button"
         android:elevation="5dp"
 
+        android:fontFamily="casual"
         android:text="@string/welcome_text"
         android:textAlignment="center"
-        android:textColor="@color/colorWhite"
+        android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-        android:textStyle="bold"
 
+        android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"

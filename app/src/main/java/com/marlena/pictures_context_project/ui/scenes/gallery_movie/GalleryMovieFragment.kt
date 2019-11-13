@@ -14,6 +14,8 @@ import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 
 class GalleryMovieFragment : Fragment(), PictureRecyclerAdapter.Listener {
 
+    private val actionList: MutableList<Picture> by lazy { mutableListOf<Picture>() }
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
@@ -26,10 +28,10 @@ class GalleryMovieFragment : Fragment(), PictureRecyclerAdapter.Listener {
         super.onViewCreated(view, savedInstanceState)
 
         val list = arrayListOf(
-            Picture(
-                url = "https://image-store.slidesharecdn.com/6d8bec77-43fa-4a9f-b183-e70fa8197397-original.jpeg",
-                name = "FurtaCor"
-            ),
+//            Picture(
+//                url = Constants.imageUrl + movie.posterPath,
+//                name = "Movie"
+//            ),
             Picture(
                 url = "https://www.photoblog.com/learn/wp-content/uploads/2018/10/mark-harpur-748500-unsplash.jpg",
                 name = "Paz Roxa"
