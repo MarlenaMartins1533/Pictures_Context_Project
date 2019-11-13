@@ -12,16 +12,16 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
-        android:id="@+id/nav_gallery_1"
-        android:name="com.marlena.pictures_context_project.ui.scenes.gallery_1.Gallery1Fragment"
-        android:label="@string/menu_gallery_1"
-        tools:layout="@layout/fragment_gallery_1" />
+        android:id="@+id/nav_gallery_landscape"
+        android:name="com.marlena.pictures_context_project.ui.scenes.gallery_landscape.GalleryLandscapeFragment"
+        android:label="@string/menu_gallery_landscape"
+        tools:layout="@layout/fragment_gallery_landscape" />
 
     <fragment
-        android:id="@+id/nav_gallery_2"
-        android:name="com.marlena.pictures_context_project.ui.scenes.gallery_2.Gallery2Fragment"
-        android:label="@string/menu_gallery_2"
-        tools:layout="@layout/fragment_gallery_2" />
+        android:id="@+id/nav_gallery_movie"
+        android:name="com.marlena.pictures_context_project.ui.scenes.gallery_movie.GalleryMovieFragment"
+        android:label="@string/menu_gallery_movie"
+        tools:layout="@layout/fragment_gallery_movie" />
 
     <fragment
         android:id="@+id/nav_tools"
