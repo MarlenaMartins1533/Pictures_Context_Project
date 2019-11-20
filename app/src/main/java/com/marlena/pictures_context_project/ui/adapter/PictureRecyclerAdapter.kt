@@ -21,7 +21,6 @@ class PictureRecyclerAdapter(private val pictureList: ArrayList<Picture>,
     override fun getItemCount() = pictureList.size
 
     override fun onBindViewHolder(holder: PictureViewHolder, position: Int) {
-
         holder.bindView(position)
     }
 
@@ -37,13 +36,6 @@ class PictureRecyclerAdapter(private val pictureList: ArrayList<Picture>,
 
             itemView.itemCV.setOnClickListener {
                 listener.openPictureFragment(pictureList[position].url)
-
-//                val intent = Intent(this, PictureActivity::class.java)
-//                startActivity(intent)
-//
-////                val intent = Intent(PictureActivity, PictureActivity::class.java)
-////                intent.putExtra("key", pictureList[position].url)
-////                listener.openPictureFragment(intent)
             }
         }
     }

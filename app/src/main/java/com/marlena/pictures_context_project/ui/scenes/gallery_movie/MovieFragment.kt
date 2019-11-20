@@ -12,7 +12,7 @@ import com.marlena.pictures_context_project.ui.adapter.PictureRecyclerAdapter
 import com.marlena.pictures_context_project.ui.scenes.PictureActivity
 import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 
-class GalleryMovieFragment : Fragment(), PictureRecyclerAdapter.Listener {
+class MovieFragment : Fragment(), Movie.View, PictureRecyclerAdapter.Listener {
 
     private val actionList: MutableList<Picture> by lazy { mutableListOf<Picture>() }
 

@@ -1,31 +1,14 @@
 package com.marlena.pictures_context_project.ui.scenes.gallery_landscape
 
-import android.content.Intent
-import android.os.Bundle
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
-import androidx.fragment.app.Fragment
-import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.ui.Picture
-import com.marlena.pictures_context_project.ui.adapter.PictureRecyclerAdapter
-import com.marlena.pictures_context_project.ui.scenes.PictureActivity
-import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 
-class GalleryAnimalFragment : Fragment(), PictureRecyclerAdapter.Listener{
+class LandscapePresenter : Landscape.Presenter {
 
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        return inflater.inflate(R.layout.fragment_gallery_landscape, container, false)
-    }
+    lateinit var pictureList: ArrayList<Picture>
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun getAllList(): ArrayList<Picture> {
 
-        val list = arrayListOf(
+        pictureList = arrayListOf(
             Picture(
                 url = "https://image-store.slidesharecdn.com/6d8bec77-43fa-4a9f-b183-e70fa8197397-original.jpeg",
                 name = "FurtaCor"
@@ -107,38 +90,6 @@ class GalleryAnimalFragment : Fragment(), PictureRecyclerAdapter.Listener{
                 name = "Submarine"
             )
         )
-
-        val adapter = PictureRecyclerAdapter(list, this)
-        recyclerViewRV?.adapter = adapter
-    }
-
-    override fun openPictureFragment(url: String) {
-
-//        //transformar em activity, abrir com transparencia
-        val intent = Intent(context, PictureActivity::class.java)
-        intent.putExtra("imageUrl", url)
-        startActivity(intent)
-//
-//        val dialog = PictureDialog()
-//        dialog.show()
-
-
-//        AlertDialog.Builder(container).apply {
-//            show()
-//        }
-
-//        var dialog: AlertDialog? = null
-//
-//            dialog = builder
-//                .setCancelable(cancelable)
-//                .create()
-//            dialog.context.theme.resolveAttribute()
-//
-//                dialog?.window?.(Picasso.get().load(url).into(pictureIMG))
-//
-//            return dialog!!
-//        }
-
-
+        return pictureList
     }
 }

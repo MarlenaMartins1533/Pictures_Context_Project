@@ -34,8 +34,6 @@ class MainActivity : AppCompatActivity() {
                 R.id.nav_home,
                 R.id.nav_gallery_landscape,
                 R.id.nav_gallery_movie,
-                R.id.nav_tools,
-                R.id.nav_share,
                 R.id.nav_send
             ), drawerLayout
         )

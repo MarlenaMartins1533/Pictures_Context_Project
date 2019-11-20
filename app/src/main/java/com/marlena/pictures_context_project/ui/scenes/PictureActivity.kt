@@ -20,9 +20,7 @@ class PictureActivity : AppCompatActivity() {
 
         if (url.isEmpty()) pictureIMG.setImageResource(R.drawable.alerta_790x400)
         else Picasso.get().load(url).into(pictureIMG)
-
     }
-
 }
 
 
