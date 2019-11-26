@@ -1,14 +1,11 @@
-package com.marlena.pictures_context_project.ui.scenes
+package com.marlena.pictures_context_project.ui.scenes.showPicture
 
-import android.app.Dialog
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
-import android.view.View.inflate
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatDialogFragment
-import androidx.fragment.app.DialogFragment
 import com.marlena.pictures_context_project.R
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.activity_picture.*

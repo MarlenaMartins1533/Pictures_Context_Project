@@ -1,4 +1,4 @@
-package com.marlena.pictures_context_project.ui.scenes.gallery_landscape
+package com.marlena.pictures_context_project.ui.scenes.galerylandscape
 
 import android.content.Intent
 import android.os.Bundle
@@ -7,11 +7,11 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
-import com.marlena.pictures_context_project.ui.adapter.PictureRecyclerAdapter
-import com.marlena.pictures_context_project.ui.scenes.PictureActivity
+import com.marlena.pictures_context_project.ui.scenes.pictureadapter.PictureAdapter
+import com.marlena.pictures_context_project.ui.scenes.showPicture.PictureActivity
 import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 
-class LandscapeFragment : Fragment(), Landscape.View, PictureRecyclerAdapter.Listener{
+class LandscapeFragment : Fragment(), Landscape.View, PictureAdapter.Listener{
 
     private lateinit var presenter: Landscape.Presenter
 
@@ -29,7 +29,10 @@ class LandscapeFragment : Fragment(), Landscape.View, PictureRecyclerAdapter.Lis
 
         val picturelist = presenter.getAllList()
 
-        val adapter = PictureRecyclerAdapter(picturelist, this)
+        val adapter = PictureAdapter(
+            picturelist,
+            this
+        )
         recyclerViewRV?.adapter = adapter
     }
 
@@ -40,7 +43,7 @@ class LandscapeFragment : Fragment(), Landscape.View, PictureRecyclerAdapter.Lis
         startActivity(intent)
 
 //        val dialog = PictureDialog.newInstance(url)
-//        dialog.show(childFragmentManager, "Picture Dialog")
+//        dialog.show(childFragmentManager, "ThePicture Dialog")
 
     }
 }

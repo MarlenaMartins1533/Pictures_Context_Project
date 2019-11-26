@@ -1,20 +1,19 @@
 package com.marlena.pictures_context_project.ui.repository
 
-import com.marlena.pictures_context_project.ui.scenes.PictureResponse
-import retrofit2.Call
-import retrofit2.http.GET
-import retrofit2.http.Path
+import com.marlena.pictures_context_project.ui.model.PictureResponse
+import com.marlena.pictures_context_project.ui.model.ThePicture
+import com.marlena.pictures_context_project.ui.service.TheCatClient
 
-interface PictureRepository {
-    @GET("list")
-    fun handleGetBreeads(): Call<List<String>>
+class PictureRepository {
 
-    @GET("list/{all}")
-    fun handleGetBreead(@Path("all")all: String): Call<PictureResponse>
+    fun getCatsList(): List<ThePicture>?{
+        val response = TheCatClient.instance.callGetCats()
+        return convertResponseInPictureList(response)
+    }
 
-    @GET("{breed}/images")
-    fun getImagesByBreed(@Path("breed")breed: String): Call<PictureResponse>
-
-    @GET("image/random")
-    fun getRandomDogImage(): Call<PictureResponse>
+    private fun convertResponseInPictureList(response: List<PictureResponse>?): List<ThePicture>? {
+        return response?.map {
+            ThePicture(url = it.url, name = it.originalFilename)
+        }
+    }
 }

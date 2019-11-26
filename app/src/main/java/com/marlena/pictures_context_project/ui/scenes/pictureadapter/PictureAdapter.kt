@@ -1,17 +1,18 @@
-package com.marlena.pictures_context_project.ui.adapter
+package com.marlena.pictures_context_project.ui.scenes.pictureadapter
 
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.marlena.pictures_context_project.R
-import com.marlena.pictures_context_project.ui.Picture
+import com.marlena.pictures_context_project.ui.model.ThePicture
 import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.item_picture.view.*
 
-class PictureRecyclerAdapter(private val pictureList: ArrayList<Picture>,
-                             private val listener: Listener) :
-    RecyclerView.Adapter<PictureRecyclerAdapter.PictureViewHolder>() {
+class PictureAdapter(
+    private val pictureList: List<ThePicture>,
+    private val listener: Listener
+) : RecyclerView.Adapter<PictureAdapter.PictureViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): PictureViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.item_picture, parent, false)

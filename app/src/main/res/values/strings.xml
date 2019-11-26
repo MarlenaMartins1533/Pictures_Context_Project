@@ -19,6 +19,7 @@
     <string name="image_id">ID</string>
     <string name="communicate">More</string>
     <string name="gallery">My Galleries</string>
+    <string name="error">Erro na solicitação</string>
 
 
     //urls

@@ -1,95 +1,95 @@
-package com.marlena.pictures_context_project.ui.scenes.gallery_animal
+package com.marlena.pictures_context_project.ui.scenes.galerylandscape
 
-import com.marlena.pictures_context_project.ui.Picture
+import com.marlena.pictures_context_project.ui.model.ThePicture
 
-class AnimalPresenter : Animal.Presenter {
+class LandscapePresenter : Landscape.Presenter {
 
-    lateinit var list: ArrayList<Picture>
+    lateinit var pictureList: ArrayList<ThePicture>
 
-    override fun getAllList(): ArrayList<Picture> {
+    override fun getAllList(): ArrayList<ThePicture> {
 
-        list = arrayListOf(
-            Picture(
+        pictureList = arrayListOf(
+            ThePicture(
                 url = "https://image-store.slidesharecdn.com/6d8bec77-43fa-4a9f-b183-e70fa8197397-original.jpeg",
                 name = "FurtaCor"
             ),
-            Picture(
+            ThePicture(
                 url = "https://www.photoblog.com/learn/wp-content/uploads/2018/10/mark-harpur-748500-unsplash.jpg",
                 name = "Paz Roxa"
             ),
-            Picture(
+            ThePicture(
                 url = "https://img.youtube.com/vi/4Ait-d7106E/hqdefault.jpg",
                 name = "Lindo Por do Sol"
             ),
-            Picture(
+            ThePicture(
                 url = "https://www.check24.ge/storage/tour/45/gallery/y8jh7-1562770737-EdBjx.jpg",
                 name = "Cachoeira"
             ),
-            Picture(
+            ThePicture(
                 url = "https://i.pinimg.com/originals/8b/50/40/8b50400baee33141b7911730b7e7628c.jpg",
                 name = "Envolvente e caloroso"
             ),
-            Picture(
+            ThePicture(
                 url = "https://img.freepik.com/foto-gratis/paisaje-hielo_1048-4465.jpg?size=626&ext=jpg",
                 name = "Gelo e serenidade"
             ),
-            Picture(
+            ThePicture(
                 url = "https://static.dir.bg/uploads/images/2018/09/25/1549458/768x432.jpg?_=1537867612",
                 name = "Inspirador e verde"
             ),
-            Picture(
+            ThePicture(
                 url = "https://i.pinimg.com/236x/a0/16/94/a01694c60570b8dbb10f580f99cef9d8--park-benches-dark-night.jpg",
                 name = "Banco e luz"
             ),
-            Picture(
+            ThePicture(
                 url = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVnn4-NxF3PDm1v6-h-eruMXn9ehdack7EJTrWnYgT7WzLZGHP&s",
                 name = "Reflexo árvore vermelha"
             ),
-            Picture(
+            ThePicture(
                 url = "http://i.imgur.com/Tc1Mb.jpg",
                 name = "Reflexo árvore verde"
             ),//10
-            Picture(
+            ThePicture(
                 url = "https://cdn2.outdoorphotographer.com/2019/01/Moody_Landscapes_1.jpg",
                 name = "Tree"
             ),
-            Picture(
+            ThePicture(
                 url = "https://q-xx.bstatic.com/images/hotel/max1024x768/394/39421590.jpg",
                 name = "Girrafe"
             ),
-            Picture(
+            ThePicture(
                 url = "https://33bopn2vwq9l20z09k1ikaal-wpengine.netdna-ssl.com/wp-content/uploads/2010/06/canada_3081-copy-1280x630.jpg",
                 name = "Purple river"
             ),
-            Picture(
+            ThePicture(
                 url = "https://i2.wp.com/digital-photography-school.com/wp-content/uploads/2014/10/Canadian-Rockies-DL1_2975-LR.jpg?resize=600%2C382&ssl=1",
                 name = "Minha fazenda"
             ),
-            Picture(
+            ThePicture(
                 url = "https://landscapephotographymagazine.com/wp-content/gallery/slideshow/12.jpg",
                 name = "Envolvente"
             ),
-            Picture(
+            ThePicture(
                 url = "https://cdn.newsapi.com.au/image/v1/5b2baa308e87de3944d49f8a4c1ca11e?width=650",
                 name = "Vulcan Landscape"
             ),
-            Picture(
+            ThePicture(
                 url = "https://photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg",
                 name = "Inspirador e girasois"
             ),
-            Picture(
+            ThePicture(
                 url = "https://img2.goodfon.com/wallpaper/nbig/a/24/nature-landscape-scenery-sky-3298.jpg",
                 name = "Ocean"
             ),
-            Picture(
+            ThePicture(
                 url = "http://www.liberaldictionary.com/wp-content/uploads/2019/02/belau-9078.jpg",
                 name = "Beautifull"
             ),
-            Picture(
+            ThePicture(
                 url = "https://www.goodfreephotos.com/albums/other-landscapes/submarine-surfacing-with-mountains-in-the-landscape.jpg",
                 name = "Submarine"
             )
         )
-        return list
+        return pictureList
     }
 }

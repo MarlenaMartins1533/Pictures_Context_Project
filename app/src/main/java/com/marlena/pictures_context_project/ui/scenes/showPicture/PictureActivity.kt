@@ -1,9 +1,6 @@
-package com.marlena.pictures_context_project.ui.scenes
+package com.marlena.pictures_context_project.ui.scenes.showPicture
 
-import android.app.Dialog
-import android.content.Context
 import android.os.Bundle
-import android.view.Window
 import androidx.appcompat.app.AppCompatActivity
 import com.marlena.pictures_context_project.R
 import com.squareup.picasso.Picasso

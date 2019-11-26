@@ -1,4 +1,4 @@
-package com.marlena.pictures_context_project.ui.scenes
+package com.marlena.pictures_context_project.ui.scenes.main
 
 import android.os.Bundle
 import androidx.navigation.findNavController
@@ -32,6 +32,7 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
+                R.id.nav_gallery_animal,
                 R.id.nav_gallery_landscape,
                 R.id.nav_gallery_movie,
                 R.id.nav_send
