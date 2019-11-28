@@ -15,8 +15,10 @@ import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 
 class AnimalFragment : Fragment(), Animal.View, PictureAdapter.Listener {
 
-    private lateinit var pictureList: List<ThePicture>
+    private val pictureList = mutableListOf<ThePicture>()
     private lateinit var presenter: Animal.Presenter
+
+    private var adapter: PictureAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -30,28 +32,40 @@ class AnimalFragment : Fragment(), Animal.View, PictureAdapter.Listener {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        pictureList = arrayListOf(ThePicture(url = "", name = ""))
+        setupAdapters()
+        setupViews()
+        makeRequests()
+    }
 
+    private fun setupAdapters() {
+        adapter = PictureAdapter(pictureList, this)
+    }
+
+    private fun setupViews() {
+        recyclerViewRV?.adapter = adapter
+    }
+
+    private fun makeRequests() {
         presenter.getCatsList()
-        if (pictureList.isNullOrEmpty()) displayFailure(1)
-        else {
-            val adapter = PictureAdapter(pictureList, this)
-            recyclerViewRV?.adapter = adapter
-        }
     }
 
     override fun setAllList(list: List<ThePicture>) {
-        pictureList = list
+        pictureList.clear()
+        pictureList.addAll(list)
+
+        if (pictureList.isEmpty()) displayFailure(1)
+        else adapter?.notifyDataSetChanged()
     }
 
     override fun displayFailure(error: Int) {
         Toast.makeText(context, getString(error), Toast.LENGTH_LONG).show()
     }
 
-    override fun openPictureFragment(url: String) {
+    override fun openPictureFragment(url: String, name: String) {
 
         val intent = Intent(context, PictureActivity::class.java)
         intent.putExtra("imageUrl", url)
+        intent.putExtra("imageName", name)
         startActivity(intent)
     }
 }

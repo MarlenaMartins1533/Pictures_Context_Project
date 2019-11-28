@@ -117,10 +117,11 @@ class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
         recyclerViewRV?.adapter = adapter
     }
 
-    override fun openPictureFragment(url: String) {
+    override fun openPictureFragment(url: String, name: String) {
         //transformar em activity, abrir com transparencia
         val intent = Intent(context, PictureActivity::class.java)
         intent.putExtra("imageUrl", url)
+        intent.putExtra("imageName", name)
         startActivity(intent)
     }
 }

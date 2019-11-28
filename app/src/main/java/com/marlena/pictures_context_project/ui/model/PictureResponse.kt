@@ -3,8 +3,8 @@ package com.marlena.pictures_context_project.ui.model
 import com.google.gson.annotations.SerializedName
 
 data class PictureResponse (
-    @SerializedName("original_filename")
-    val originalFilename: String,
+    @SerializedName("id")
+    val id: String,
     val url: String
 )
 

@@ -2,12 +2,12 @@
     <string name="app_name">Pictures_Context_Project</string>
     <string name="navigation_drawer_open">Open navigation drawer</string>
     <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Picture Context</string>
+    <string name="nav_header_title">My Diary of Sensations</string>
     <string name="nav_header_subtitle">android.studio@android.com</string>
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
-    <string name="menu_home">My photo Collections</string>
+    <string name="menu_home">My Diary</string>
     <string name="menu_gallery_animal">Animals</string>
     <string name="menu_gallery_landscape">Landscape</string>
     <string name="menu_gallery_movie">Movie</string>
@@ -20,6 +20,8 @@
     <string name="communicate">More</string>
     <string name="gallery">My Galleries</string>
     <string name="error">Erro na solicitação</string>
+    <string name="name">Nome:</string>
+    <string name="url">Url:</string>
 
 
     //urls

@@ -36,12 +36,12 @@ class PictureAdapter(
             itemView.itemCV.isClickable = true
 
             itemView.itemCV.setOnClickListener {
-                listener.openPictureFragment(pictureList[position].url)
+                listener.openPictureFragment(pictureList[position].url, pictureList[position].name)
             }
         }
     }
 
     interface Listener {
-        fun openPictureFragment(url: String)
+        fun openPictureFragment(url: String,name: String)
     }
 }

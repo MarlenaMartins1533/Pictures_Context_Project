@@ -7,54 +7,81 @@
     android:layout_height="match_parent"
     android:background="@color/colorBackground">
 
+    <ImageView
+        android:id="@+id/img_box_animal"
+        android:layout_width="63dp"
+        android:layout_height="64dp"
+        android:elevation="3dp"
 
-<!--    <ImageView-->
-<!--        android:id="@+id/img_box_animal"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:background="@drawable/ic_menu_gallery"-->
-<!--        android:elevation="3dp"-->
+        app:layout_constraintBottom_toBottomOf="@id/image_home"
+        app:layout_constraintEnd_toEndOf="@id/image_home"
+        app:layout_constraintHorizontal_bias="0.045"
+        app:layout_constraintStart_toStartOf="@id/image_home"
+        app:layout_constraintTop_toTopOf="@id/image_home"
+        app:layout_constraintVertical_bias="0.551"
+        tools:ignore="ContentDescription" />
 
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.24"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.16" />-->
+    <ImageView
+        android:id="@+id/img_box_landscape"
+        android:layout_width="60dp"
+        android:layout_height="67dp"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@id/image_home"
+        app:layout_constraintEnd_toEndOf="@id/image_home"
+        app:layout_constraintHorizontal_bias="0.363"
+        app:layout_constraintStart_toStartOf="@id/image_home"
+        app:layout_constraintTop_toTopOf="@id/image_home"
+        app:layout_constraintVertical_bias="0.551"
+        tools:ignore="ContentDescription" />
 
-<!--    <ImageView-->
-<!--        android:id="@+id/img_box_landscape"-->
-<!--        android:layout_width="50dp"-->
-<!--        android:layout_height="50dp"-->
-<!--        android:background="@drawable/ic_menu_gallery"-->
-<!--        android:elevation="3dp"-->
-<!--        app:layout_constraintBottom_toBottomOf="parent"-->
-<!--        app:layout_constraintEnd_toEndOf="parent"-->
-<!--        app:layout_constraintHorizontal_bias="0.72"-->
-<!--        app:layout_constraintStart_toStartOf="parent"-->
-<!--        app:layout_constraintTop_toTopOf="parent"-->
-<!--        app:layout_constraintVertical_bias="0.16" />-->
+    <ImageView
+        android:id="@+id/img_box_nasa"
+        android:layout_width="44dp"
+        android:layout_height="46dp"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@id/image_home"
+        app:layout_constraintEnd_toEndOf="@id/image_home"
+        app:layout_constraintHorizontal_bias="0.704"
+        app:layout_constraintStart_toStartOf="@id/image_home"
+        app:layout_constraintTop_toTopOf="@id/image_home"
+        app:layout_constraintVertical_bias="0.539"
+        tools:ignore="ContentDescription" />
+
+    <ImageView
+        android:id="@+id/img_box_movie"
+        android:layout_width="64dp"
+        android:layout_height="56dp"
+        android:elevation="3dp"
+        app:layout_constraintBottom_toBottomOf="@id/image_home"
+        app:layout_constraintEnd_toEndOf="@id/image_home"
+        app:layout_constraintHorizontal_bias="0.96"
+        app:layout_constraintStart_toStartOf="@id/image_home"
+        app:layout_constraintTop_toTopOf="@id/image_home"
+        app:layout_constraintVertical_bias="0.543"
+        tools:ignore="ContentDescription" />
 
     <ImageView
         android:id="@+id/image_home"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@drawable/shining_book"
+        android:layout_width="match_parent"
+        android:layout_height="240dp"
+        android:background="@drawable/room"
         android:padding="8dp"
-
+        android:paddingBottom="15dp"
         android:text="@string/welcome_text"
         android:textAlignment="center"
         android:textColor="@color/colorWhite"
         android:textSize="24sp"
         android:textStyle="bold"
-
+        android:transitionName="image"
         app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintDimensionRatio="1"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintVertical_bias="0.0"
+        tools:ignore="ContentDescription" />
 
     <Button
         android:id="@+id/text_home"
@@ -64,13 +91,10 @@
         android:layout_margin="8dp"
         android:background="@drawable/shape_button"
         android:elevation="5dp"
-
-        android:fontFamily="casual"
-        android:text="@string/welcome_text"
+        android:text="@string/nav_header_title"
         android:textAlignment="center"
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
-
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

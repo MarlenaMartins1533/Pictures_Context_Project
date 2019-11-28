@@ -13,7 +13,7 @@ class PictureRepository {
 
     private fun convertResponseInPictureList(response: List<PictureResponse>?): List<ThePicture>? {
         return response?.map {
-            ThePicture(url = it.url, name = it.originalFilename)
+            ThePicture(url = it.url, name = it.id)
         }
     }
 }

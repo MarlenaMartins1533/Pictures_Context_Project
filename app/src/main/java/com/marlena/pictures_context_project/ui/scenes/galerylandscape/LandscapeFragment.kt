@@ -1,5 +1,6 @@
 package com.marlena.pictures_context_project.ui.scenes.galerylandscape
 
+import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -32,15 +33,22 @@ class LandscapeFragment : Fragment(), Landscape.View, PictureAdapter.Listener{
         val adapter = PictureAdapter(
             picturelist,
             this
+
         )
         recyclerViewRV?.adapter = adapter
     }
 
-    override fun openPictureFragment(url: String) {
+    override fun openPictureFragment(url: String, name: String) {
 
         val intent = Intent(context, PictureActivity::class.java)
         intent.putExtra("imageUrl", url)
-        startActivity(intent)
+        intent.putExtra("imageName", name)
+
+        startActivity(intent
+//            , ActivityOptions
+//            .makeSceneTransitionAnimation(childFragmentManager, view, PictureActivity.TRANSITION_IMAGE)
+//            .toBundle()
+        )
 
 //        val dialog = PictureDialog.newInstance(url)
 //        dialog.show(childFragmentManager, "ThePicture Dialog")

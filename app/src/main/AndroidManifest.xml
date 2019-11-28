@@ -27,7 +27,7 @@
             android:name=".ui.scenes.showPicture.PictureActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
-        <activity android:name=".ui.scenes.showPicture.TransitionActivity"/>
+<!--        <activity android:name=".ui.scenes.showPicture.TransitionActivity"/>-->
     </application>
 
 </manifest>
