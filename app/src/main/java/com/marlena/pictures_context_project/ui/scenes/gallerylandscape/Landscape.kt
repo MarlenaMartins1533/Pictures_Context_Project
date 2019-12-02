@@ -1,4 +1,4 @@
-package com.marlena.pictures_context_project.ui.scenes.galerylandscape
+package com.marlena.pictures_context_project.ui.scenes.gallerylandscape
 
 import com.marlena.pictures_context_project.ui.model.ThePicture
 

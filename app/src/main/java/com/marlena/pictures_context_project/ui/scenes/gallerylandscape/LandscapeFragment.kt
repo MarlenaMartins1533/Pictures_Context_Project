@@ -1,6 +1,5 @@
-package com.marlena.pictures_context_project.ui.scenes.galerylandscape
+package com.marlena.pictures_context_project.ui.scenes.gallerylandscape
 
-import android.app.ActivityOptions
 import android.content.Intent
 import android.os.Bundle
 import android.view.LayoutInflater
