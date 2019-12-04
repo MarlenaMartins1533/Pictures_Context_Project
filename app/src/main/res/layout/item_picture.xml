@@ -5,6 +5,7 @@
     android:id="@+id/itemCV"
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
+    android:background="@color/colorBlack"
     android:transitionName="image"
     app:layout_constraintDimensionRatio="1"
     app:cardPreventCornerOverlap="true"
@@ -24,11 +25,11 @@
             android:layout_width="180dp"
             android:layout_height="180dp"
             android:scaleType="centerCrop"
-            tools:src="@tools:sample/backgrounds/scenic"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"/>
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@tools:sample/backgrounds/scenic" />
 
         <TextView
             android:id="@+id/image_titleTXT"

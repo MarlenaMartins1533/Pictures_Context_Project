@@ -17,7 +17,6 @@ class CatFragment : Fragment(), Cat.View, PictureAdapter.Listener {
 
     private val pictureList = mutableListOf<ThePicture>()
     private lateinit var presenter: Cat.Presenter
-
     private var adapter: PictureAdapter? = null
 
     override fun onCreateView(

@@ -1,23 +1,24 @@
 package com.marlena.pictures_context_project.ui.scenes.gallerycat
 
 import com.marlena.pictures_context_project.ui.core.App
-import kotlinx.coroutines.CoroutineScope
-import kotlinx.coroutines.Dispatchers
-import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
+import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 
-class CatPresenter(private val view: Cat.View): Cat.Presenter, CoroutineScope {
-    override val coroutineContext: CoroutineContext
-        get() = Dispatchers.Main
+class CatPresenter(private val view: Cat.View) : Cat.Presenter, CoroutineScope {
+    override val coroutineContext: CoroutineContext = Dispatchers.Main
+    private var job: Job? = null
 
-    override fun getCatsList(){
-        launch {
+    override fun getCatsList() {
+        job = launch {
             val result = withContext(Dispatchers.IO) {
-                App.pictureRepository.getCatsList()
+                App.catRepository.getCatList()
             }
             if (result.isNullOrEmpty()) view.displayFailure(1)
             else view.setAllList(result)
         }
+    }
+
+    override fun kill() {
+        job?.cancel()
     }
 }

@@ -2,7 +2,7 @@ package com.marlena.pictures_context_project.ui.model
 
 import com.google.gson.annotations.SerializedName
 
-data class PictureResponse (
+data class CatResponse (
     @SerializedName("id")
     val id: String,
     val url: String
@@ -12,7 +12,7 @@ data class PictureResponse (
 
 //import com.google.gson.annotations.SerializedName
 
-//data class PictureResponse (
+//data class CatResponse (
 //
 //    @SerializedName("breed_ids")
 //    val breed_ids: Any,
@@ -29,5 +29,5 @@ data class PictureResponse (
 //)
 
 
-//val pictureResponse = PictureResponse("bla.com", "blastatus")
+//val pictureResponse = CatResponse("bla.com", "blastatus")
 //val picture = ThePicture(url = pictureResponse.message, name = pictureResponse.status, posterPath = pictureResponse.message + pictureResponse.status)

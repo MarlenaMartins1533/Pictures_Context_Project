@@ -4,12 +4,13 @@ import com.marlena.pictures_context_project.ui.model.ThePicture
 
 interface Cat {
 
-    interface View{
+    interface View {
         fun setAllList(list: List<ThePicture>)
         fun displayFailure(error: Int)
     }
-    interface Presenter{
+
+    interface Presenter {
         fun getCatsList()
-//                : List<ThePicture>
+        fun kill()
     }
 }
