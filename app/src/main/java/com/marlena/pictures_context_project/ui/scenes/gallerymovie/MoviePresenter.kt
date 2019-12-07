@@ -1,12 +1,11 @@
 package com.marlena.pictures_context_project.ui.scenes.gallerymovie
 
-import com.marlena.pictures_context_project.ui.core.App
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
+import com.marlena.pictures_context_project.ui.core.App
 
 class MoviePresenter(private val view: Movie.View) : Movie.Presenter, CoroutineScope {
-    override val coroutineContext: CoroutineContext
-        get() = Dispatchers.Main
+    override val coroutineContext: CoroutineContext get() = Dispatchers.Main
     private var job: Job? = null
 
     override fun getMoviesList() {
@@ -22,7 +21,7 @@ class MoviePresenter(private val view: Movie.View) : Movie.Presenter, CoroutineS
         }
     }
 
-    override fun kill(){
+    override fun kill() {
         job?.cancel()
     }
 }

@@ -1,4 +1,3 @@
 package com.marlena.pictures_context_project.ui.scenes.about
 
-class AboutPresenter: About.Presenter {
-}
+class AboutPresenter(private val view: About.View) : About.Presenter {}

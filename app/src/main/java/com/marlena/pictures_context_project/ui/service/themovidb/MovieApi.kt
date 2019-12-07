@@ -7,6 +7,7 @@ import retrofit2.http.GET
 import retrofit2.http.Query
 
 interface MovieApi {
+
     @GET("movie/popular")
     fun getMovies(
         @Query("language") language: String = "en-US",

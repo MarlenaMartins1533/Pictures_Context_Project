@@ -12,14 +12,16 @@
     <string name="menu_gallery_cat">Random Cats</string>
     <string name="menu_gallery_movie">Something about Movies</string>
     <string name="menu_about">About</string>
+    <string name="desc_app">Aplicativo de imagens.</string>
 
-    <string name="desc_app">App de lindas imagens.</string>
     <string name="welcome_text">
         Expressar o que sente é necessário para a vida de qualquer ser.
         Respeitar isso e tornar um hábito saudável pode mudá-lo para melhor!
         Inspire-se com animais, pessoas, músicas, coisas.
         Use esse aplicativo como forma de demonstrar seus sentimentos e sensações.
-        Anote tudo que sentir com carinho e faça disso um hábito!</string>
+        Anote tudo que sentir com carinho e faça disso um hábito!
+    </string>
+
     <string name="image_title">Título da Imagem</string>
     <string name="image_id">ID</string>
     <string name="communicate">More</string>
@@ -27,68 +29,4 @@
     <string name="error">Erro na solicitação</string>
     <string name="name">Nome:</string>
     <string name="url">Url:</string>
-
-
-    //urls
-<!--    <string name="urlFurtaCor">-->
-<!--        https://image-store.slidesharecdn.com/6d8bec77-43fa-4a9f-b183-e70fa8197397-original.jpeg-->
-<!--    </string>-->
-<!--    <string name="urlPazRoxa">-->
-<!--        https://www.photoblog.com/learn/wp-content/uploads/2018/10/mark-harpur-748500-unsplash.jpg-->
-<!--    </string>-->
-<!--    <string name="urlLindoPordoSol">-->
-<!--        https://img.youtube.com/vi/4Ait-d7106E/hqdefault.jpg-->
-<!--    </string>-->
-<!--    <string name="urlCachoeira">-->
-<!--        https://www.check24.ge/storage/tour/45/gallery/y8jh7-1562770737-EdBjx.jpg-->
-<!--    </string>-->
-<!--    <string name="urlEnvolventeecaloroso">-->
-<!--        https://i.pinimg.com/originals/8b/50/40/8b50400baee33141b7911730b7e7628c.jpg-->
-<!--    </string>    -->
-<!--    <string name="urlGeloeserenidade">-->
-<!--        https://img.freepik.com/foto-gratis/paisaje-hielo_1048-4465.jpg?size=626&ext=jpg-->
-<!--    </string>-->
-<!--    <string name="urlInspiradoreverde">-->
-<!--        https://static.dir.bg/uploads/images/2018/09/25/1549458/768x432.jpg?_=1537867612-->
-<!--    </string>-->
-<!--    <string name="urlBancoeluz">-->
-<!--        https://i.pinimg.com/236x/a0/16/94/a01694c60570b8dbb10f580f99cef9d8&#45;&#45;park-benches-dark-night.jpg-->
-<!--    </string>-->
-<!--    <string name="urlReflexoarvorevermelha">-->
-<!--        https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRVnn4-NxF3PDm1v6-h-eruMXn9ehdack7EJTrWnYgT7WzLZGHP&s-->
-<!--    </string>-->
-<!--    <string name="urlReflexoArvoreVerde">-->
-<!--        http://i.imgur.com/Tc1Mb.jpg-->
-<!--    </string>-->
-<!--    <string name="urlTree">-->
-<!--        https://cdn2.outdoorphotographer.com/2019/01/Moody_Landscapes_1.jpg-->
-<!--    </string>-->
-<!--    <string name="urlGirrafe">-->
-<!--        https://q-xx.bstatic.com/images/hotel/max1024x768/394/39421590.jpg-->
-<!--    </string>-->
-<!--    <string name="urlPurpleRiver">-->
-<!--        https://33bopn2vwq9l20z09k1ikaal-wpengine.netdna-ssl.com/wp-content/uploads/2010/06/canada_3081-copy-1280x630.jpg-->
-<!--    </string>-->
-<!--    <string name="urlMinhaFazenda">-->
-<!--        https://i2.wp.com/digital-photography-school.com/wp-content/uploads/2014/10/Canadian-Rockies-DL1_2975-LR.jpg?resize=600%2C382&ssl=1-->
-<!--    </string>-->
-<!--    <string name="urlEnvolvente">-->
-<!--        https://landscapephotographymagazine.com/wp-content/gallery/slideshow/12.jpg-->
-<!--    </string>-->
-<!--    <string name="urlVulcanLandscape">-->
-<!--        https://cdn.newsapi.com.au/image/v1/5b2baa308e87de3944d49f8a4c1ca11e?width=650-->
-<!--    </string>-->
-<!--    <string name="urlInspiradoreGirasois">-->
-<!--        https://photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg-->
-<!--    </string>-->
-<!--    <string name="urlOcean">-->
-<!--        https://img2.goodfon.com/wallpaper/nbig/a/24/nature-landscape-scenery-sky-3298.jpg-->
-<!--    </string>-->
-<!--    <string name="urlBeautifull">-->
-<!--        http://www.liberaldictionary.com/wp-content/uploads/2019/02/belau-9078.jpg-->
-<!--    </string>-->
-<!--    <string name="urlSubmarine">-->
-<!--        https://www.goodfreephotos.com/albums/other-landscapes/submarine-surfacing-with-mountains-in-the-landscape.jpg-->
-<!--    </string>    -->
-
 </resources>

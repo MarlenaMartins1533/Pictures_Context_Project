@@ -4,7 +4,6 @@ object Constants {
 
     //TheCatApi
     const val baseUrlCat = "https://api.thecatapi.com/"
-    const val imageUrlCat = "v1/images/search"
     const val appIdCat: String = "a4125d90-ab42-45b5-be7f-229dcb516629"
 
     //TheMovieDB

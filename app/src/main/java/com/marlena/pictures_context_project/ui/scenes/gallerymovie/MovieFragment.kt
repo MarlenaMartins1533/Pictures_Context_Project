@@ -1,17 +1,19 @@
 package com.marlena.pictures_context_project.ui.scenes.gallerymovie
 
-import android.content.Intent
 import android.os.Bundle
-import android.view.LayoutInflater
+import android.util.Pair
 import android.view.View
-import android.view.ViewGroup
 import android.widget.Toast
+import android.content.Intent
+import android.view.ViewGroup
+import android.view.LayoutInflater
+import android.app.ActivityOptions
 import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.ui.model.ThePicture
-import com.marlena.pictures_context_project.ui.scenes.pictureadapter.PictureAdapter
-import com.marlena.pictures_context_project.ui.scenes.showPicture.PictureActivity
 import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
+import com.marlena.pictures_context_project.ui.scenes.picture.PictureActivity
+import com.marlena.pictures_context_project.ui.scenes.pictureadapter.PictureAdapter
 
 class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
 
@@ -59,11 +61,17 @@ class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
         Toast.makeText(context, "Erro na solicitação", Toast.LENGTH_LONG).show()
     }
 
-    override fun openPictureFragment(url: String, name: String) {
-        //transformar em activity, abrir com transparencia
-        val intent = Intent(context, PictureActivity::class.java)
-        intent.putExtra("imageUrl", url)
-        intent.putExtra("imageName", name)
-        startActivity(intent)
+    override fun openPictureFragment(url: String, name: String, itemView: View) {
+
+        val options = ActivityOptions.makeSceneTransitionAnimation(
+            activity,
+            Pair(itemView, PictureActivity.TRANSITION_IMAGE)
+        )
+
+        val intent = Intent(context, PictureActivity::class.java).apply {
+            putExtra("imageUrl", url)
+            putExtra("imageName", name)
+        }
+        activity?.startActivity(intent, options.toBundle())
     }
 }

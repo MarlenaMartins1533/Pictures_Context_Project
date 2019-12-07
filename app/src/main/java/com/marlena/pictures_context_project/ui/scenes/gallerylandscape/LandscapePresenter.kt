@@ -2,11 +2,11 @@ package com.marlena.pictures_context_project.ui.scenes.gallerylandscape
 
 import com.marlena.pictures_context_project.ui.model.ThePicture
 
-class LandscapePresenter : Landscape.Presenter {
+class LandscapePresenter(private val view: Landscape.View) : Landscape.Presenter {
 
     lateinit var pictureList: ArrayList<ThePicture>
 
-    override fun getAllList(): ArrayList<ThePicture> {
+    override fun getAllList() {
 
         pictureList = arrayListOf(
             ThePicture(
@@ -90,6 +90,6 @@ class LandscapePresenter : Landscape.Presenter {
                 name = "Submarine"
             )
         )
-        return pictureList
+        view.setAllList(pictureList)
     }
 }

@@ -8,19 +8,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 
 class TheCatClient {
-    companion object { //singleton - only one instance
-        lateinit var instance: TheCatClient
-            private set
-
-        fun initialize() {
-            instance = TheCatClient()
-            instance.theCatApi = Retrofit.Builder()
-                .baseUrl(Constants.baseUrlCat)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(TheCatApi::class.java)
-        }
-    }
 
     private lateinit var theCatApi: TheCatApi
 
@@ -42,60 +29,18 @@ class TheCatClient {
 
         return null
     }
-}
 
-//
-//: PageKeyedDataSource<Int, CatResponse>() {
-//
-//    companion object {
-//        lateinit var instance: TheCatClient
-//            private set
-//
-//        fun initialize() {
-//            instance = TheCatClient()
-//            instance.theCatApi = Retrofit.Builder()
-//                .baseUrlCat(Constants.baseUrlCat)
-//                .addConverterFactory(GsonConverterFactory.create())
-//                .build()
-//                .create(TheCatApi::class.java)
-//        }
-//    }
-//    private var newPage = -1
-//    private lateinit var theCatApi: TheCatApi
-//
-//    override fun loadInitial(
-//        params: LoadInitialParams<Int>,
-//        callback: LoadInitialCallback<Int, CatResponse>
-//    ) {
-//        fun callGetCats(): List<CatResponse>? {
-//            newPage++
-//            val call = theCatApi.getCats()
-//            try {
-//                val response = call.execute()
-//                if (response.isSuccessful) {
-//                    Log.d("LENA", "getCats successful: ${response.body()?.toString()}")
-//                    response.body()?.let {
-//                        callback.onResult(it, null, newPage)
-//                    }
-//                    return response.body()
-//                } else {
-//                    Log.d("LENA", "getCats Response Error: ${response.errorBody()?.toString()}")
-//                }
-//            } catch (e: IOException) {
-//                Log.e("IOException", e.message)
-//            } catch (e: RuntimeException) {
-//                Log.e("Runtime Exception", e.message)
-//            }
-//            return null
-//        }
-//    }
-//
-//    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, CatResponse>) {
-//        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-//    }
-//
-//    override fun loadBefore(
-//        params: LoadParams<Int>,
-//        callback: LoadCallback<Int, CatResponse>
-//    ) {}
-//}
+    companion object {
+        lateinit var instance: TheCatClient
+            private set
+
+        fun initialize() {
+            instance = TheCatClient()
+            instance.theCatApi = Retrofit.Builder()
+                .baseUrl(Constants.baseUrlCat)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(TheCatApi::class.java)
+        }
+    }
+}
