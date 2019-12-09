@@ -13,7 +13,7 @@ import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.ui.model.ThePicture
 import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 import com.marlena.pictures_context_project.ui.scenes.picture.PictureActivity
-import com.marlena.pictures_context_project.ui.scenes.pictureadapter.PictureAdapter
+import com.marlena.pictures_context_project.ui.scenes.adapters.pictureadapter.PictureAdapter
 
 class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
 
@@ -39,7 +39,11 @@ class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
     }
 
     private fun setupAdapters() {
-        adapter = PictureAdapter(pictureList, this)
+        adapter =
+            PictureAdapter(
+                pictureList,
+                this
+            )
     }
 
     private fun setupViews() {

@@ -1,4 +1,4 @@
-package com.marlena.pictures_context_project.ui.service.themovidb
+package com.marlena.pictures_context_project.ui.service.themovidbapi
 
 import com.marlena.pictures_context_project.ui.data.Constants
 import com.marlena.pictures_context_project.ui.model.MovieResponse

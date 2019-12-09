@@ -1,4 +1,4 @@
-package com.marlena.pictures_context_project.ui.service.themovidb
+package com.marlena.pictures_context_project.ui.service.themovidbapi
 
 import android.util.Log
 import com.marlena.pictures_context_project.ui.data.Constants

@@ -1,4 +1,4 @@
-package com.marlena.pictures_context_project.ui.scenes.pictureadapter
+package com.marlena.pictures_context_project.ui.scenes.adapters.pictureadapter
 
 import android.view.View
 import android.view.ViewGroup
