@@ -15,5 +15,5 @@ data class MovieResponse(
 
     @SerializedName("results")
     @Expose
-    val results: List<Movie>
+    val results: List<TheMovie>
 )

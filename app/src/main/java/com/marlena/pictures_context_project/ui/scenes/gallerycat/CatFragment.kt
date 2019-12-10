@@ -66,15 +66,17 @@ class CatFragment : Fragment(), Cat.View, PictureAdapter.Listener {
         Toast.makeText(context, getString(error), Toast.LENGTH_LONG).show()
     }
 
-    override fun openPictureFragment(url: String, name: String, itemView: View) {
+    override fun openPictureFragment(name: String, release_date: String, url: String, overview: String, itemView: View) {
 
         val options = ActivityOptions.makeSceneTransitionAnimation(
             activity, Pair(itemView, PictureActivity.TRANSITION_IMAGE)
         )
 
         val intent = Intent(context, PictureActivity::class.java).apply {
-            putExtra("imageUrl", url)
             putExtra("imageName", name)
+            putExtra("imageRelease_date", release_date)
+            putExtra("imageUrl", url)
+            putExtra("imageOverview", overview)
         }
         activity?.startActivity(intent, options.toBundle())
     }

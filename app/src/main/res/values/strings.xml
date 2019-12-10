@@ -29,4 +29,7 @@
     <string name="error">Erro na solicitação</string>
     <string name="name">Nome:</string>
     <string name="url">Url:</string>
+    <string name="overview">Resumo:</string>
+    <string name="release_date">Lançamento:</string>
+    <string name="scrolling">Mais informações</string>
 </resources>

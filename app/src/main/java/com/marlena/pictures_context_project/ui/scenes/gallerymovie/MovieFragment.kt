@@ -10,16 +10,16 @@ import android.view.LayoutInflater
 import android.app.ActivityOptions
 import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
-import com.marlena.pictures_context_project.ui.model.ThePicture
 import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
+import com.marlena.pictures_context_project.ui.model.TheMovie
 import com.marlena.pictures_context_project.ui.scenes.picture.PictureActivity
-import com.marlena.pictures_context_project.ui.scenes.adapters.pictureadapter.PictureAdapter
+import com.marlena.pictures_context_project.ui.scenes.adapters.movieadapter.MovieAdapter
 
-class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
+class MovieFragment : Fragment(), Movie.View, MovieAdapter.Listener {
 
-    private val pictureList = mutableListOf<ThePicture>()
+    private val movieList = mutableListOf<TheMovie>()
     private lateinit var presenter: MoviePresenter
-    private var adapter: PictureAdapter? = null
+    private var adapter: MovieAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
@@ -40,8 +40,8 @@ class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
 
     private fun setupAdapters() {
         adapter =
-            PictureAdapter(
-                pictureList,
+            MovieAdapter(
+                movieList,
                 this
             )
     }
@@ -54,9 +54,9 @@ class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
         presenter.getMoviesList()
     }
 
-    override fun setList(list: List<ThePicture>) {
-        pictureList.clear()
-        pictureList.addAll(list)
+    override fun setList(list: List<TheMovie>) {
+        movieList.clear()
+        movieList.addAll(list)
 
         adapter?.notifyDataSetChanged()
     }
@@ -65,7 +65,7 @@ class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
         Toast.makeText(context, "Erro na solicitação", Toast.LENGTH_LONG).show()
     }
 
-    override fun openPictureFragment(url: String, name: String, itemView: View) {
+    override fun openPictureFragment(name: String, release_date: String, url: String, overview: String, itemView: View) {
 
         val options = ActivityOptions.makeSceneTransitionAnimation(
             activity,
@@ -73,8 +73,10 @@ class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
         )
 
         val intent = Intent(context, PictureActivity::class.java).apply {
-            putExtra("imageUrl", url)
             putExtra("imageName", name)
+            putExtra("imageRelease_date", release_date)
+            putExtra("imageUrl", url)
+            putExtra("imageOverview", overview)
         }
         activity?.startActivity(intent, options.toBundle())
     }
