@@ -13,19 +13,19 @@
 
     <fragment
         android:id="@+id/nav_gallery_animal"
-        android:name="com.marlena.pictures_context_project.ui.scenes.galeryanimal.AnimalFragment"
-        android:label="@string/menu_gallery_animal"
-        tools:layout="@layout/fragment_gallery_animal" />
+        android:name="com.marlena.pictures_context_project.ui.scenes.gallerycat.CatFragment"
+        android:label="@string/menu_gallery_cat"
+        tools:layout="@layout/fragment_gallery_cat" />
 
     <fragment
         android:id="@+id/nav_gallery_landscape"
-        android:name="com.marlena.pictures_context_project.ui.scenes.galerylandscape.LandscapeFragment"
+        android:name="com.marlena.pictures_context_project.ui.scenes.gallerylandscape.LandscapeFragment"
         android:label="@string/menu_gallery_landscape"
         tools:layout="@layout/fragment_gallery_landscape" />
 
     <fragment
         android:id="@+id/nav_gallery_movie"
-        android:name="com.marlena.pictures_context_project.ui.scenes.galerymovie.MovieFragment"
+        android:name="com.marlena.pictures_context_project.ui.scenes.gallerymovie.MovieFragment"
         android:label="@string/menu_gallery_movie"
         tools:layout="@layout/fragment_gallery_movie" />
 

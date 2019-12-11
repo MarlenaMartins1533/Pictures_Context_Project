@@ -8,16 +8,15 @@
     android:background="@color/colorBackground">
 
     <ImageView
-        android:id="@+id/img_box_animal"
+        android:id="@+id/img_box_cat"
         android:layout_width="63dp"
         android:layout_height="64dp"
         android:elevation="3dp"
-
-        app:layout_constraintBottom_toBottomOf="@id/image_home"
-        app:layout_constraintEnd_toEndOf="@id/image_home"
+        app:layout_constraintBottom_toBottomOf="@id/img_home"
+        app:layout_constraintEnd_toEndOf="@id/img_home"
         app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="@id/image_home"
-        app:layout_constraintTop_toTopOf="@id/image_home"
+        app:layout_constraintStart_toStartOf="@id/img_home"
+        app:layout_constraintTop_toTopOf="@id/img_home"
         app:layout_constraintVertical_bias="0.551"
         tools:ignore="ContentDescription" />
 
@@ -26,11 +25,11 @@
         android:layout_width="60dp"
         android:layout_height="67dp"
         android:elevation="3dp"
-        app:layout_constraintBottom_toBottomOf="@id/image_home"
-        app:layout_constraintEnd_toEndOf="@id/image_home"
+        app:layout_constraintBottom_toBottomOf="@id/img_home"
+        app:layout_constraintEnd_toEndOf="@id/img_home"
         app:layout_constraintHorizontal_bias="0.363"
-        app:layout_constraintStart_toStartOf="@id/image_home"
-        app:layout_constraintTop_toTopOf="@id/image_home"
+        app:layout_constraintStart_toStartOf="@id/img_home"
+        app:layout_constraintTop_toTopOf="@id/img_home"
         app:layout_constraintVertical_bias="0.551"
         tools:ignore="ContentDescription" />
 
@@ -39,11 +38,11 @@
         android:layout_width="44dp"
         android:layout_height="46dp"
         android:elevation="3dp"
-        app:layout_constraintBottom_toBottomOf="@id/image_home"
-        app:layout_constraintEnd_toEndOf="@id/image_home"
+        app:layout_constraintBottom_toBottomOf="@id/img_home"
+        app:layout_constraintEnd_toEndOf="@id/img_home"
         app:layout_constraintHorizontal_bias="0.704"
-        app:layout_constraintStart_toStartOf="@id/image_home"
-        app:layout_constraintTop_toTopOf="@id/image_home"
+        app:layout_constraintStart_toStartOf="@id/img_home"
+        app:layout_constraintTop_toTopOf="@id/img_home"
         app:layout_constraintVertical_bias="0.539"
         tools:ignore="ContentDescription" />
 
@@ -52,27 +51,22 @@
         android:layout_width="64dp"
         android:layout_height="56dp"
         android:elevation="3dp"
-        app:layout_constraintBottom_toBottomOf="@id/image_home"
-        app:layout_constraintEnd_toEndOf="@id/image_home"
+        app:layout_constraintBottom_toBottomOf="@id/img_home"
+        app:layout_constraintEnd_toEndOf="@id/img_home"
         app:layout_constraintHorizontal_bias="0.96"
-        app:layout_constraintStart_toStartOf="@id/image_home"
-        app:layout_constraintTop_toTopOf="@id/image_home"
+        app:layout_constraintStart_toStartOf="@id/img_home"
+        app:layout_constraintTop_toTopOf="@id/img_home"
         app:layout_constraintVertical_bias="0.543"
         tools:ignore="ContentDescription" />
 
     <ImageView
-        android:id="@+id/image_home"
+        android:id="@+id/img_home"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="240dp"
         android:background="@drawable/room"
         android:padding="8dp"
         android:paddingBottom="15dp"
-        android:text="@string/welcome_text"
-        android:textAlignment="center"
-        android:textColor="@color/colorWhite"
-        android:textSize="24sp"
-        android:textStyle="bold"
         android:transitionName="image"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintDimensionRatio="1"
@@ -84,7 +78,7 @@
         tools:ignore="ContentDescription" />
 
     <Button
-        android:id="@+id/text_home"
+        android:id="@+id/bt_text_home"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -100,7 +94,21 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/image_home"
+        app:layout_constraintTop_toBottomOf="@id/img_home"
         app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/txt_home"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:padding="16dp"
+        android:text="@string/welcome_text"
+        android:textAlignment="center"
+        android:textColor="@color/colorPrimaryDark"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/bt_text_home"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"/>
 
 </androidx.constraintlayout.widget.ConstraintLayout>

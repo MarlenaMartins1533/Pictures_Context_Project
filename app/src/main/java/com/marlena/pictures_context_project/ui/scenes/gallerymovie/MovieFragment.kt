@@ -1,18 +1,37 @@
-package com.marlena.pictures_context_project.ui.scenes.galerylandscape
+package com.marlena.pictures_context_project.ui.scenes.gallerymovie
 
+import android.content.Intent
+import android.os.Bundle
+import android.view.LayoutInflater
+import android.view.View
+import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.ui.model.ThePicture
+import com.marlena.pictures_context_project.ui.scenes.pictureadapter.PictureAdapter
+import com.marlena.pictures_context_project.ui.scenes.showPicture.PictureActivity
+import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 
-class LandscapePresenter : Landscape.Presenter {
+class MovieFragment : Fragment(), Movie.View, PictureAdapter.Listener {
 
-    lateinit var pictureList: ArrayList<ThePicture>
+    private val actionList: MutableList<ThePicture> by lazy { mutableListOf<ThePicture>() }
 
-    override fun getAllList(): ArrayList<ThePicture> {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View? {
+        return inflater.inflate(R.layout.fragment_gallery_movie, container, false)
+    }
 
-        pictureList = arrayListOf(
-            ThePicture(
-                url = "https://image-store.slidesharecdn.com/6d8bec77-43fa-4a9f-b183-e70fa8197397-original.jpeg",
-                name = "FurtaCor"
-            ),
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+
+        val list = arrayListOf(
+//            ThePicture(
+//                url = Constants.imageUrl + movie.posterPath,
+//                name = "Movie"
+//            ),
             ThePicture(
                 url = "https://www.photoblog.com/learn/wp-content/uploads/2018/10/mark-harpur-748500-unsplash.jpg",
                 name = "Paz Roxa"
@@ -90,6 +109,19 @@ class LandscapePresenter : Landscape.Presenter {
                 name = "Submarine"
             )
         )
-        return pictureList
+
+        val adapter = PictureAdapter(
+            list,
+            this
+        )
+        recyclerViewRV?.adapter = adapter
+    }
+
+    override fun openPictureFragment(url: String, name: String) {
+        //transformar em activity, abrir com transparencia
+        val intent = Intent(context, PictureActivity::class.java)
+        intent.putExtra("imageUrl", url)
+        intent.putExtra("imageName", name)
+        startActivity(intent)
     }
 }

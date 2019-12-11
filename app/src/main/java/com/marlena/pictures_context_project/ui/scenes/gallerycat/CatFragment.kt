@@ -1,4 +1,4 @@
-package com.marlena.pictures_context_project.ui.scenes.galeryanimal
+package com.marlena.pictures_context_project.ui.scenes.gallerycat
 
 import android.content.Intent
 import android.os.Bundle
@@ -13,10 +13,10 @@ import com.marlena.pictures_context_project.ui.model.ThePicture
 import com.marlena.pictures_context_project.ui.scenes.showPicture.PictureActivity
 import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 
-class AnimalFragment : Fragment(), Animal.View, PictureAdapter.Listener {
+class CatFragment : Fragment(), Cat.View, PictureAdapter.Listener {
 
     private val pictureList = mutableListOf<ThePicture>()
-    private lateinit var presenter: Animal.Presenter
+    private lateinit var presenter: Cat.Presenter
 
     private var adapter: PictureAdapter? = null
 
@@ -25,8 +25,8 @@ class AnimalFragment : Fragment(), Animal.View, PictureAdapter.Listener {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        presenter = AnimalPresenter(this)
-        return inflater.inflate(R.layout.fragment_gallery_animal, container, false)
+        presenter = CatPresenter(this)
+        return inflater.inflate(R.layout.fragment_gallery_cat, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
