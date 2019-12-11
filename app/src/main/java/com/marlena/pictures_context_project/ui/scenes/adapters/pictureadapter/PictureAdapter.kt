@@ -38,7 +38,6 @@ class PictureAdapter(
             itemView.itemCV.setOnClickListener {
                 listener.openPictureFragment(
                     pictureList[position].name,
-                    "",
                     pictureList[position].url,
                     "",
                     itemView
@@ -48,6 +47,6 @@ class PictureAdapter(
     }
 
     interface Listener {
-        fun openPictureFragment(name: String, release_date: String, url: String, overview: String, itemView: View)
+        fun openPictureFragment(name: String, url: String, overview: String, itemView: View)
     }
 }

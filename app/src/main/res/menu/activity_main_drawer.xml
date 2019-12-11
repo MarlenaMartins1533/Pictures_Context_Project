@@ -11,6 +11,10 @@
         <item android:title="@string/gallery">
             <menu>
                 <item
+                    android:id="@+id/nav_gallery_my"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gallery_my" />
+                <item
                     android:id="@+id/nav_gallery_landscape"
                     android:icon="@drawable/ic_menu_gallery"
                     android:title="@string/menu_gallery_landscape" />
@@ -18,7 +22,6 @@
                     android:id="@+id/nav_gallery_animal"
                     android:icon="@drawable/ic_menu_gallery"
                     android:title="@string/menu_gallery_cat" />
-
                 <item
                     android:id="@+id/nav_gallery_movie"
                     android:icon="@drawable/ic_menu_gallery"
@@ -30,7 +33,7 @@
     <item android:title="@string/communicate">
         <menu>
             <item
-                android:id="@+id/nav_send"
+                android:id="@+id/nav_about"
                 android:icon="@drawable/ic_menu_send"
                 android:title="@string/menu_about" />
         </menu>

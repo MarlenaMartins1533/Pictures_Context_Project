@@ -71,10 +71,10 @@ class LandscapePresenter(private val view: Landscape.View) : Landscape.Presenter
             ),
             ThePicture(
                 url = "https://cdn.newsapi.com.au/image/v1/5b2baa308e87de3944d49f8a4c1ca11e?width=650",
-                name = "Vulcan Landscape"
+                name = "My Vulcan"
             ),
             ThePicture(
-                url = "https://photographycourse.net/wp-content/uploads/2014/11/Landscape-Photography-steps.jpg",
+                url = "https://photographycourse.net/wp-content/uploads/2014/11/MyGallery-Photography-steps.jpg",
                 name = "Inspirador e girasois"
             ),
             ThePicture(

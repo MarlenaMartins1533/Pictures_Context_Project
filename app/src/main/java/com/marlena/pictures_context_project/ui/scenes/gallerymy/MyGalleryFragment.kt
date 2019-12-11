@@ -1,4 +1,4 @@
-package com.marlena.pictures_context_project.ui.scenes.gallerymovie
+package com.marlena.pictures_context_project.ui.scenes.gallerymy
 
 import android.os.Bundle
 import android.util.Pair
@@ -10,24 +10,24 @@ import android.view.LayoutInflater
 import android.app.ActivityOptions
 import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
+import com.marlena.pictures_context_project.ui.model.ThePicture
 import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
-import com.marlena.pictures_context_project.ui.model.TheMovie
 import com.marlena.pictures_context_project.ui.scenes.picture.PictureActivity
-import com.marlena.pictures_context_project.ui.scenes.adapters.movieadapter.MovieAdapter
+import com.marlena.pictures_context_project.ui.scenes.adapters.pictureadapter.PictureAdapter
 
-class MovieFragment : Fragment(), Movie.View, MovieAdapter.Listener {
+class MyGalleryFragment : Fragment(), MyGallery.View, PictureAdapter.Listener {
 
-    private val movieList = mutableListOf<TheMovie>()
-    private lateinit var presenter: MoviePresenter
-    private var adapter: MovieAdapter? = null
+    private lateinit var presenter: MyGallery.Presenter
+    private val pictureList = mutableListOf<ThePicture>()
+    private var adapter: PictureAdapter? = null
 
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        presenter = MoviePresenter(this)
-        return inflater.inflate(R.layout.fragment_gallery_movie, container, false)
+        presenter = MyGalleryPresenter(this)
+        return inflater.inflate(R.layout.fragment_gallery_landscape, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -40,8 +40,8 @@ class MovieFragment : Fragment(), Movie.View, MovieAdapter.Listener {
 
     private fun setupAdapters() {
         adapter =
-            MovieAdapter(
-                movieList,
+            PictureAdapter(
+                pictureList,
                 this
             )
     }
@@ -50,19 +50,20 @@ class MovieFragment : Fragment(), Movie.View, MovieAdapter.Listener {
         recyclerViewRV?.adapter = adapter
     }
 
-    override fun makeRequests() {
-        presenter.getMoviesList()
+    private fun makeRequests() {
+        presenter.getAllList()
     }
 
-    override fun setList(list: List<TheMovie>) {
-        movieList.clear()
-        movieList.addAll(list)
+    override fun setAllList(list: List<ThePicture>) {
+        pictureList.clear()
+        pictureList.addAll(list)
 
-        adapter?.notifyDataSetChanged()
+        if (pictureList.isEmpty()) displayFailure(1)
+        else adapter?.notifyDataSetChanged()
     }
 
     override fun displayFailure(error: Int) {
-        Toast.makeText(context, "Erro na solicitação", Toast.LENGTH_LONG).show()
+        Toast.makeText(context, getString(error), Toast.LENGTH_LONG).show()
     }
 
     override fun openPictureFragment(name: String, url: String, overview: String, itemView: View) {

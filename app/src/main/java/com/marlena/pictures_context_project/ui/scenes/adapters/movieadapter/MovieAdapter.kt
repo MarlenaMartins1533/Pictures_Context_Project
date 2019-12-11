@@ -37,10 +37,8 @@ class MovieAdapter(
             itemView.itemCV.isClickable = true
 
             itemView.itemCV.setOnClickListener {
-                val url =
                 listener.openPictureFragment(
                     theMovieList[position].title,
-                    theMovieList[position].release_date,
                     (Constants.imageUrlMovie + theMovieList[position].poster_path),
                     theMovieList[position].overview,
                     itemView
@@ -50,6 +48,6 @@ class MovieAdapter(
     }
 
     interface Listener {
-        fun openPictureFragment(name: String, release_date: String, url: String, overview: String, itemView: View)
+        fun openPictureFragment(name: String, url: String, overview: String, itemView: View)
     }
 }

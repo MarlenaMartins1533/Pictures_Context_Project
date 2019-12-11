@@ -7,9 +7,6 @@ data class TheMovie(
     @SerializedName("title")
     val title: String,
 
-    @SerializedName("release_date")
-    val release_date: String = "unknown",
-
     @SerializedName("poster_path")
     val poster_path: String,
 

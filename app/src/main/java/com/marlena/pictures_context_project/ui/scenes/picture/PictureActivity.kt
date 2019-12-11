@@ -19,7 +19,6 @@ class PictureActivity : AppCompatActivity(), Picture.View {
         presenter = PicturePresenter(this)
 
         val name = intent.getStringExtra("imageName") ?: ""
-        val releaseDate = intent.getStringExtra("imageReleaseDate") ?: ""
         val url = intent.getStringExtra("imageUrl") ?: ""
         val overview = intent.getStringExtra("imageOverview") ?: ""
         setTransitionName(pictureIMG, TRANSITION_IMAGE)
@@ -29,17 +28,10 @@ class PictureActivity : AppCompatActivity(), Picture.View {
             Picasso.get().load(url).into(pictureIMG)
             nameTXT.text = name
             urlTXT.text = url
-            if (releaseDate.isNotEmpty()) {
-                release_dateTXT.text = releaseDate
-                release_dateTXT.visibility = View.VISIBLE
-                textView_release_date.visibility = View.VISIBLE
-                textView_release_date.visibility
-            }
             if (overview.isNotEmpty()) {
                 overviewTXT.text = overview
                 overviewTXT.visibility = View.VISIBLE
                 textView_overview.visibility = View.VISIBLE
-                textView_overview.visibility
             }
         }
     }

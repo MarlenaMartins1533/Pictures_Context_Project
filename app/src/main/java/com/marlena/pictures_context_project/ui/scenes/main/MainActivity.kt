@@ -1,6 +1,5 @@
 package com.marlena.pictures_context_project.ui.scenes.main
 
-import android.view.Menu
 import android.os.Bundle
 import androidx.appcompat.widget.Toolbar
 import androidx.navigation.ui.navigateUp
@@ -30,10 +29,11 @@ class MainActivity : AppCompatActivity() {
         appBarConfiguration = AppBarConfiguration(
             setOf(
                 R.id.nav_home,
+                R.id.nav_gallery_my,
                 R.id.nav_gallery_animal,
                 R.id.nav_gallery_landscape,
                 R.id.nav_gallery_movie,
-                R.id.nav_send
+                R.id.nav_about
             ), drawerLayout
         )
         setupActionBarWithNavController(navController, appBarConfiguration)
