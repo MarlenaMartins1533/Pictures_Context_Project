@@ -1,30 +1,17 @@
-package com.marlena.pictures_context_project.ui.service
+package com.marlena.pictures_context_project.ui.service.thecatapi
 
 import android.util.Log
 import com.marlena.pictures_context_project.ui.data.Constants
-import com.marlena.pictures_context_project.ui.model.PictureResponse
+import com.marlena.pictures_context_project.ui.model.CatResponse
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import java.io.IOException
 
 class TheCatClient {
-    companion object { //singleton - only one instance
-        lateinit var instance: TheCatClient
-            private set
-
-        fun initialize() {
-            instance = TheCatClient()
-            instance.theCatApi = Retrofit.Builder()
-                .baseUrl(Constants.baseUrl)
-                .addConverterFactory(GsonConverterFactory.create())
-                .build()
-                .create(TheCatApi::class.java)
-        }
-    }
 
     private lateinit var theCatApi: TheCatApi
 
-    fun callGetCats(): List<PictureResponse>? {
+    fun callGetCats(): List<CatResponse>? {
         val call = theCatApi.getCats()
         try {
             val response = call.execute()
@@ -41,5 +28,19 @@ class TheCatClient {
         }
 
         return null
+    }
+
+    companion object {
+        lateinit var instance: TheCatClient
+            private set
+
+        fun initialize() {
+            instance = TheCatClient()
+            instance.theCatApi = Retrofit.Builder()
+                .baseUrl(Constants.baseUrlCat)
+                .addConverterFactory(GsonConverterFactory.create())
+                .build()
+                .create(TheCatApi::class.java)
+        }
     }
 }

@@ -1,13 +1,13 @@
-package com.marlena.pictures_context_project.ui.scenes.pictureadapter
+package com.marlena.pictures_context_project.ui.scenes.adapters.pictureadapter
 
-import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.recyclerview.widget.RecyclerView
-import com.marlena.pictures_context_project.R
-import com.marlena.pictures_context_project.ui.model.ThePicture
+import android.view.LayoutInflater
 import com.squareup.picasso.Picasso
+import com.marlena.pictures_context_project.R
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.item_picture.view.*
+import com.marlena.pictures_context_project.ui.model.ThePicture
 
 class PictureAdapter(
     private val pictureList: List<ThePicture>,
@@ -36,12 +36,16 @@ class PictureAdapter(
             itemView.itemCV.isClickable = true
 
             itemView.itemCV.setOnClickListener {
-                listener.openPictureFragment(pictureList[position].url, pictureList[position].name)
+                listener.openPictureFragment(
+                    pictureList[position].url,
+                    pictureList[position].name,
+                    itemView
+                )
             }
         }
     }
 
     interface Listener {
-        fun openPictureFragment(url: String,name: String)
+        fun openPictureFragment(url: String, name: String, itemView: View)
     }
 }
