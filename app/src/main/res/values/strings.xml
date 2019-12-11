@@ -34,4 +34,7 @@
     <string name="release_date">Lançamento: </string>
     <string name="scrolling">Mais informações</string>
     <string name="tip">P.S: Marque o Checkboxdas imagens que mais gostar para armazena-las aqui!</string>
+    <string name="whatreyoufeeling">O que você sente ao ver essa imagem?</string>
+    <string name="sensations">Sensações:</string>
+    <string name="save">Save</string>
 </resources>
