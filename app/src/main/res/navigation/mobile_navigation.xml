@@ -12,32 +12,26 @@
         tools:layout="@layout/fragment_home" />
 
     <fragment
+        android:id="@+id/nav_gallery_animal"
+        android:name="com.marlena.pictures_context_project.ui.scenes.galeryanimal.AnimalFragment"
+        android:label="@string/menu_gallery_animal"
+        tools:layout="@layout/fragment_gallery_animal" />
+
+    <fragment
         android:id="@+id/nav_gallery_landscape"
-        android:name="com.marlena.pictures_context_project.ui.scenes.gallery_landscape.GalleryLandscapeFragment"
+        android:name="com.marlena.pictures_context_project.ui.scenes.galerylandscape.LandscapeFragment"
         android:label="@string/menu_gallery_landscape"
         tools:layout="@layout/fragment_gallery_landscape" />
 
     <fragment
         android:id="@+id/nav_gallery_movie"
-        android:name="com.marlena.pictures_context_project.ui.scenes.gallery_movie.GalleryMovieFragment"
+        android:name="com.marlena.pictures_context_project.ui.scenes.galerymovie.MovieFragment"
         android:label="@string/menu_gallery_movie"
         tools:layout="@layout/fragment_gallery_movie" />
 
     <fragment
-        android:id="@+id/nav_tools"
-        android:name="com.marlena.pictures_context_project.ui.scenes.tools.ToolsFragment"
-        android:label="@string/menu_tools"
-        tools:layout="@layout/fragment_tools" />
-
-    <fragment
-        android:id="@+id/nav_share"
-        android:name="com.marlena.pictures_context_project.ui.scenes.share.ShareFragment"
-        android:label="@string/menu_share"
-        tools:layout="@layout/fragment_share" />
-
-    <fragment
         android:id="@+id/nav_send"
-        android:name="com.marlena.pictures_context_project.ui.scenes.send.SendFragment"
-        android:label="@string/menu_send"
-        tools:layout="@layout/fragment_send" />
+        android:name="com.marlena.pictures_context_project.ui.scenes.about.AboutFragment"
+        android:label="@string/menu_about"
+        tools:layout="@layout/fragment_about" />
 </navigation>

@@ -8,31 +8,33 @@
             android:id="@+id/nav_home"
             android:icon="@drawable/ic_home_black"
             android:title="@string/menu_home" />
-        <item
-            android:id="@+id/nav_gallery_landscape"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery_landscape" />
 
-        <item
-            android:id="@+id/nav_gallery_movie"
-            android:icon="@drawable/ic_menu_gallery"
-            android:title="@string/menu_gallery_movie" />
-        <item
-            android:id="@+id/nav_tools"
-            android:icon="@drawable/ic_menu_manage"
-            android:title="@string/menu_tools" />
+        <item android:title="@string/gallery">
+            <menu>
+                <item
+                    android:id="@+id/nav_gallery_animal"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gallery_animal" />
+
+                <item
+                    android:id="@+id/nav_gallery_landscape"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gallery_landscape" />
+
+                <item
+                    android:id="@+id/nav_gallery_movie"
+                    android:icon="@drawable/ic_menu_gallery"
+                    android:title="@string/menu_gallery_movie" />
+            </menu>
+        </item>
     </group>
 
-    <item android:title="Communicate">
+    <item android:title="@string/communicate">
         <menu>
-            <item
-                android:id="@+id/nav_share"
-                android:icon="@drawable/ic_menu_share"
-                android:title="@string/menu_share" />
             <item
                 android:id="@+id/nav_send"
                 android:icon="@drawable/ic_menu_send"
-                android:title="@string/menu_send" />
+                android:title="@string/menu_about" />
         </menu>
     </item>
 
