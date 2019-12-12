@@ -1,11 +1,11 @@
 package com.marlena.pictures_context_project.service.thecatapi
 
 import android.util.Log
+import retrofit2.Retrofit
+import java.io.IOException
+import retrofit2.converter.gson.GsonConverterFactory
 import com.marlena.pictures_context_project.data.Constants
 import com.marlena.pictures_context_project.model.response.CatResponse
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import java.io.IOException
 
 class TheCatClient {
 

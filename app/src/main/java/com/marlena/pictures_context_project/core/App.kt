@@ -13,6 +13,7 @@ class App : Application() {
         super.onCreate()
 
         MyPicturesDB.initialize(this)
+
         TheCatClient.initialize()
         MovieClient.initialize()
     }

@@ -13,5 +13,4 @@ data class TheMovie(
     @SerializedName("overview")
     val overview: String = "unknown"
 
-
 )

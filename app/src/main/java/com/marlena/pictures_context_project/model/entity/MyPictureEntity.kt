@@ -10,12 +10,11 @@ class MyPictureEntity: Serializable {
 
     @PrimaryKey
     @ColumnInfo(name = "url")
-    val url: String = ""
+    var url: String = "url"
     @ColumnInfo(name = "name")
-    val name: String = "Atenção"
-
-//    @ColumnInfo(name = "favorite")
-//    val favorite: Boolean = true
-//    @ColumnInfo(name = "desc")
-//    val sensation: String = ""
+    var name: String = "Atenção"
+    @ColumnInfo(name = "favorite")
+    var favorite: Boolean = true
+    @ColumnInfo(name = "desc")
+    var sensation: String = "sensation"
 }

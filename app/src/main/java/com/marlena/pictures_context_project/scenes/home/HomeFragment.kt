@@ -9,14 +9,11 @@ import com.marlena.pictures_context_project.R
 
 class HomeFragment : Fragment(), Home.View {
 
-    private lateinit var presenter: HomePresenter
-
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        presenter = HomePresenter(this)
         return inflater.inflate(R.layout.fragment_home, container, false)
     }
 }

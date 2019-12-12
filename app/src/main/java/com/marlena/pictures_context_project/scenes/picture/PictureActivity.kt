@@ -7,36 +7,29 @@ import com.squareup.picasso.Picasso
 import com.marlena.pictures_context_project.R
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat.setTransitionName
-import com.marlena.pictures_context_project.model.entity.MyPictureEntity
 import kotlinx.android.synthetic.main.activity_picture.*
 
-class PictureActivity : AppCompatActivity(),
-    Picture.View {
+class PictureActivity : AppCompatActivity(), Picture.View {
 
     private lateinit var presenter: PicturePresenter
-    private lateinit var myPicture: MyPictureEntity
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_picture)
 
-        presenter = PicturePresenter(this)
+        presenter = PicturePresenter()
 
         val url = intent.getStringExtra("imageUrl") ?: ""
         val name = intent.getStringExtra("imageName") ?: ""
         val overview = intent.getStringExtra("imageOverview") ?: ""
-        setTransitionName(pictureIMG,
-            TRANSITION_IMAGE
-        )
+        setTransitionName(pictureIMG, TRANSITION_IMAGE)
 
-        if (url.isEmpty()){
+        if (url.isEmpty()) {
             pictureIMG.setImageResource(R.drawable.alerta_790x400)
-        }
-        else {
-            myPicture = presenter.getPicture(url)
+        } else {
             setPicture(url)
             setView(name, url, overview)
-            initListener()
+            initListener(url)
         }
     }
 
@@ -55,24 +48,23 @@ class PictureActivity : AppCompatActivity(),
         }
     }
 
-    private fun initListener() {
-
+    private fun initListener(url: String) {
         my_pictureCBX.setOnClickListener {
-            val favorite: Boolean
 
             if (my_pictureCBX.isChecked) {
-                favorite = true
-                setVisibility(favorite)
-                presenter.insertMyPicture(myPicture)
-                presenter.requestMessage("Imagem ADICIONADA a My Gallery")
-
-            } else presenter.requestMessage("Imagem JÁ ADICIONADA vá a My Gallery para desfavoritar")
-
+                setVisibility(true)
+                showMessage(url)
+                presenter.insertMyPicture(url)
+                showMessage("Imagem ADICIONADA a My Gallery")
+            } else {
+                setVisibility(false)
+                showMessage("Imagem JÁ ADICIONADA vá a My Gallery para desfavoritar")
+            }
         }
 
         saveBTN.setOnClickListener {
             val sensation = getEdt()
-            presenter.requestMessage(sensation)
+            showMessage(sensation)
 //                presenter.editMyPicture(url, sensation)
         }
     }

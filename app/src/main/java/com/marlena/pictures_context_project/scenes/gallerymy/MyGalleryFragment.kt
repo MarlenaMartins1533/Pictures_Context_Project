@@ -12,9 +12,9 @@ import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.model.entity.MyPictureEntity
 import com.marlena.pictures_context_project.model.domain.ThePicture
-import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 import com.marlena.pictures_context_project.scenes.picture.PictureActivity
 import com.marlena.pictures_context_project.scenes.adapters.pictureadapter.PictureAdapter
+import kotlinx.android.synthetic.main.fragment_gallery_my.*
 
 class MyGalleryFragment : Fragment(),
     MyGallery.View, PictureAdapter.Listener {
@@ -30,7 +30,7 @@ class MyGalleryFragment : Fragment(),
         savedInstanceState: Bundle?
     ): View? {
         presenter = MyGalleryPresenter(this)
-        return inflater.inflate(R.layout.fragment_gallery_landscape, container, false)
+        return inflater.inflate(R.layout.fragment_gallery_my, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
