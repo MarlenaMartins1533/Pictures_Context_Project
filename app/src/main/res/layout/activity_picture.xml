@@ -99,7 +99,7 @@
                 android:layout_marginStart="3dp"
                 android:padding="8dp"
                 android:textColor="@color/colorPrimary"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:visibility="gone"
                 app:layout_constraintStart_toEndOf="@id/textView_overview"
                 app:layout_constraintTop_toBottomOf="@+id/nameTXT" />
@@ -123,7 +123,7 @@
                 android:layout_marginStart="3dp"
                 android:padding="8dp"
                 android:textColor="@color/colorPrimary"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 app:layout_constraintStart_toEndOf="@id/textView_url"
                 app:layout_constraintTop_toBottomOf="@id/overviewTXT" />
 
@@ -157,6 +157,7 @@
                 android:id="@+id/saveBTN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_margin="8dp"
                 android:background="@drawable/shape_button"
                 android:text="@string/save"
                 android:gravity="center_horizontal"
