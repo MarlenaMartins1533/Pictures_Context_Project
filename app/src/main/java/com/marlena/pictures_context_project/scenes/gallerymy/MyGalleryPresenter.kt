@@ -1,5 +1,6 @@
 package com.marlena.pictures_context_project.scenes.gallerymy
 
+import com.marlena.pictures_context_project.model.domain.ThePicture
 import kotlinx.coroutines.*
 import kotlin.coroutines.CoroutineContext
 import com.marlena.pictures_context_project.model.entity.MyPictureEntity
@@ -29,13 +30,26 @@ class MyGalleryPresenter(private val view: MyGallery.View): MyGallery.Presenter,
                     myPicturesList.addAll(it)
                 }
             }
-            view.setAllList(myPicturesList)
+            val thePictureList = convertMyPicturesListInToDomain(myPicturesList)
+            view.setAllList(thePictureList)
         }
     }
 
     override fun deleteMyPicture(myPicture: MyPictureEntity) {
         job = launch(Dispatchers.IO) {
             MyPicturesDB.instance.mypicturesDAO().delete(myPicture)
+        }
+    }
+
+    private fun convertMyPicturesListInToDomain(
+        myPictureList: MutableList<MyPictureEntity>
+    ): List<ThePicture> {
+
+        return myPictureList.map {
+            ThePicture(
+                name = it.name,
+                url = it.url
+            )
         }
     }
 

@@ -8,9 +8,9 @@ import android.content.Intent
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.app.ActivityOptions
+import android.widget.CheckBox
 import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
-import com.marlena.pictures_context_project.model.entity.MyPictureEntity
 import com.marlena.pictures_context_project.model.domain.ThePicture
 import com.marlena.pictures_context_project.scenes.picture.PictureActivity
 import com.marlena.pictures_context_project.scenes.adapters.pictureadapter.PictureAdapter
@@ -20,8 +20,7 @@ class MyGalleryFragment : Fragment(),
     MyGallery.View, PictureAdapter.Listener {
 
     private lateinit var presenter: MyGallery.Presenter
-    private val myPictureList: MutableList<MyPictureEntity>
-            by lazy { mutableListOf<MyPictureEntity>() }
+    private val pictureList = mutableListOf<ThePicture>()
     private var adapter: PictureAdapter? = null
 
     override fun onCreateView(
@@ -42,27 +41,15 @@ class MyGalleryFragment : Fragment(),
     }
 
     private fun setupAdapters() {
-        val thePictureList = convertMyPicturesListInToDomain(myPictureList)
         adapter =
             PictureAdapter(
-                thePictureList,
+                pictureList,
                 this
             )
     }
 
-    private fun convertMyPicturesListInToDomain(
-        myPictureList: MutableList<MyPictureEntity>
-    ): List<ThePicture> {
-
-        return myPictureList.map {
-            ThePicture(
-                name = it.name,
-                url = it.url
-            )
-        }
-    }
-
     private fun setupViews() {
+
         recyclerViewRV?.adapter = adapter
     }
 
@@ -70,11 +57,11 @@ class MyGalleryFragment : Fragment(),
         presenter.getAllList()
     }
 
-    override fun setAllList(list: List<MyPictureEntity>) {
-        myPictureList.clear()
-        myPictureList.addAll(list)
+    override fun setAllList(list: List<ThePicture>) {
+        pictureList.clear()
+        pictureList.addAll(list)
 
-        if (myPictureList.isEmpty()) displayFailure(1)
+        if (pictureList.isEmpty()) displayFailure(1)
         else adapter?.notifyDataSetChanged()
     }
 

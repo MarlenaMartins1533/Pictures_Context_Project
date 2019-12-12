@@ -8,16 +8,18 @@ import com.marlena.pictures_context_project.R
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat.setTransitionName
 import kotlinx.android.synthetic.main.activity_picture.*
+import com.marlena.pictures_context_project.model.domain.ThePicture
 
 class PictureActivity : AppCompatActivity(), Picture.View {
 
     private lateinit var presenter: PicturePresenter
+    private lateinit var thePicture: ThePicture
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_picture)
 
-        presenter = PicturePresenter()
+        presenter = PicturePresenter(this)
 
         val url = intent.getStringExtra("imageUrl") ?: ""
         val name = intent.getStringExtra("imageName") ?: ""
@@ -28,8 +30,8 @@ class PictureActivity : AppCompatActivity(), Picture.View {
             pictureIMG.setImageResource(R.drawable.alerta_790x400)
         } else {
             setPicture(url)
-            setView(name, url, overview)
-            initListener(url)
+            setView(url, name, overview)
+            initListener(url, name)
         }
     }
 
@@ -37,43 +39,54 @@ class PictureActivity : AppCompatActivity(), Picture.View {
         Picasso.get().load(url).into(pictureIMG)
     }
 
-    private fun setView(name: String, url: String, overview: String) {
-        nameTXT.text = name
+    private fun setView(url: String, name: String, overview: String) {
         urlTXT.text = url
+        nameTXT.text = name
 
         if (overview.isNotEmpty()) {
             overviewTXT.text = overview
             overviewTXT.visibility = View.VISIBLE
             textView_overview.visibility = View.VISIBLE
         }
+        if (presenter.getMyPictureByUrl(url) != null) {
+            my_pictureCBX.isChecked = true
+            setVisibility(true)
+        }
     }
 
-    private fun initListener(url: String) {
-        my_pictureCBX.setOnClickListener {
+    private fun initListener(url: String, name: String) {
+        var favorite: Boolean
 
+        my_pictureCBX.setOnClickListener {
             if (my_pictureCBX.isChecked) {
-                setVisibility(true)
-                showMessage(url)
-                presenter.insertMyPicture(url)
-                showMessage("Imagem ADICIONADA a My Gallery")
+                favorite = true
+                setVisibility(favorite)
             } else {
-                setVisibility(false)
-                showMessage("Imagem JÁ ADICIONADA vá a My Gallery para desfavoritar")
+                favorite = false
+                setVisibility(favorite)
+
             }
         }
 
         saveBTN.setOnClickListener {
             val sensation = getEdt()
-            showMessage(sensation)
-//                presenter.editMyPicture(url, sensation)
+
+            if (sensation != "") {
+                sensationsTXT.text = sensation
+                sensationsEDT.hint = ""
+                thePicture = ThePicture(url, name, true, sensation)
+                presenter.insertMyPicture(thePicture)
+            }
+            onBackPressed()
         }
     }
 
     private fun setVisibility(favorite: Boolean) {
         if (favorite) {
+            saveBTN.visibility = View.VISIBLE
+            sensationsTXT.visibility = View.VISIBLE
             sensationsEDT.visibility = View.VISIBLE
             textView_sensations.visibility = View.VISIBLE
-            saveBTN.visibility = View.VISIBLE
 
         } else {
             sensationsEDT.visibility = View.GONE
@@ -82,12 +95,18 @@ class PictureActivity : AppCompatActivity(), Picture.View {
         }
     }
 
-    private fun getEdt(): String {
-        return sensationsEDT.text.toString()
+    override fun getEdt(): String {
+        val sensations = sensationsEDT.text.toString()
+        if (sensations == "") showMessage("Texto vazio!")
+        return sensations
     }
 
     override fun showMessage(message: String) {
         Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+    }
+
+    override fun onBackPressed() {
+        super.onBackPressed()
     }
 
     companion object {

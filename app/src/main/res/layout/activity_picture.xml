@@ -120,7 +120,8 @@
                 android:id="@+id/urlTXT"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="3dp"
+                android:layout_marginStart="4dp"
+                android:layout_marginTop="4dp"
                 android:padding="8dp"
                 android:textColor="@color/colorPrimary"
                 android:textSize="12sp"
@@ -138,7 +139,21 @@
                 android:textStyle="bold"
                 android:visibility="gone"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/urlTXT" />
+                app:layout_constraintTop_toBottomOf="@id/textView_url" />
+
+            <TextView
+                android:id="@+id/sensationsTXT"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:padding="8dp"
+                android:text=""
+                android:textSize="12sp"
+                android:textColor="@color/colorPrimary"
+                android:textStyle="bold"
+                android:visibility="gone"
+                app:layout_constraintStart_toEndOf="@id/textView_sensations"
+                app:layout_constraintTop_toBottomOf="@id/urlTXT"/>
 
             <EditText
                 android:id="@+id/sensationsEDT"
@@ -149,15 +164,16 @@
                 android:textColor="@color/colorPrimary"
                 android:textStyle="bold"
                 android:visibility="gone"
-                app:layout_constraintStart_toEndOf="@id/textView_sensations"
-                app:layout_constraintTop_toBottomOf="@id/urlTXT"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/sensationsTXT"
                 tools:ignore="Autofill,TextFields" />
 
             <Button
                 android:id="@+id/saveBTN"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_margin="8dp"
+                android:layout_margin="16dp"
                 android:background="@drawable/shape_button"
                 android:text="@string/save"
                 android:gravity="center_horizontal"
@@ -168,7 +184,6 @@
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/sensationsEDT"
                 app:layout_constraintEnd_toEndOf="parent"/>
-
 
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
