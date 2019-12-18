@@ -11,7 +11,9 @@ interface Picture {
     }
 
     interface Presenter {
-        fun insertMyPicture(thePicture: ThePicture)
+        fun insertMyPicture(thePicture: ThePicture, sensations: String)
+        fun deletePicture(url: String)
         fun getMyPictureByUrl(url: String): MyPictureEntity?
+        fun getSensations(url: String): String
     }
 }

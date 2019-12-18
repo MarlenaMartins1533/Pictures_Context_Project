@@ -8,7 +8,6 @@ import android.content.Intent
 import android.view.ViewGroup
 import android.view.LayoutInflater
 import android.app.ActivityOptions
-import android.widget.CheckBox
 import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
 import com.marlena.pictures_context_project.model.domain.ThePicture
@@ -49,7 +48,6 @@ class MyGalleryFragment : Fragment(),
     }
 
     private fun setupViews() {
-
         recyclerViewRV?.adapter = adapter
     }
 
@@ -65,33 +63,23 @@ class MyGalleryFragment : Fragment(),
         else adapter?.notifyDataSetChanged()
     }
 
-    override fun removeMyPicture(url: String) {
-        val myPicture = presenter.getPicture(url)
-        presenter.deleteMyPicture(myPicture)
-        presenter.getAllList()
-    }
-
-    override fun displayFailure(error: Int) {
+    private fun displayFailure(error: Int) {
         Toast.makeText(context, getString(error), Toast.LENGTH_LONG).show()
     }
 
-    override fun showMessage(message: String) {
-        Toast.makeText(context, message, Toast.LENGTH_LONG).show()
-    }
-
-    override fun openPictureFragment(name: String, url: String, overview: String, itemView: View) {
+    override fun openPictureFragment(picture: ThePicture, itemView: View) {
 
         val options = ActivityOptions.makeSceneTransitionAnimation(
-            activity,
-            Pair(itemView, PictureActivity.TRANSITION_IMAGE)
+            activity, Pair(itemView, PictureActivity.TRANSITION_IMAGE)
         )
 
         val intent = Intent(context, PictureActivity::class.java).apply {
-            putExtra("imageName", name)
-            putExtra("imageUrl", url)
-            putExtra("imageOverview", overview)
+            putExtra("imageName", picture.name)
+            putExtra("imageUrl", picture.url)
+            putExtra("imageOverview", "")
         }
         activity?.startActivity(intent, options.toBundle())
+        adapter?.notifyDataSetChanged()
     }
 
     override fun onDestroy() {

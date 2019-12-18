@@ -38,9 +38,7 @@ class MovieAdapter(
 
             itemView.itemCV.setOnClickListener {
                 listener.openPictureFragment(
-                    theMovieList[position].title,
-                    (Constants.imageUrlMovie + theMovieList[position].poster_path),
-                    theMovieList[position].overview,
+                    theMovieList[position],
                     itemView
                 )
             }
@@ -48,6 +46,6 @@ class MovieAdapter(
     }
 
     interface Listener {
-        fun openPictureFragment(name: String, url: String, overview: String, itemView: View)
+        fun openPictureFragment(movie: TheMovie, itemView: View)
     }
 }

@@ -68,18 +68,18 @@ class LandscapeFragment : Fragment(),
         Toast.makeText(context, getString(error), Toast.LENGTH_LONG).show()
     }
 
-    override fun openPictureFragment(name: String, url: String, overview: String, itemView: View) {
+    override fun openPictureFragment(picture: ThePicture, itemView: View) {
 
         val options = ActivityOptions.makeSceneTransitionAnimation(
-            activity,
-            Pair(itemView, PictureActivity.TRANSITION_IMAGE)
+            activity, Pair(itemView, PictureActivity.TRANSITION_IMAGE)
         )
 
         val intent = Intent(context, PictureActivity::class.java).apply {
-            putExtra("imageName", name)
-            putExtra("imageUrl", url)
-            putExtra("imageOverview", overview)
+            putExtra("imageUrl", picture.url)
+            putExtra("imageName", picture.name)
+            putExtra("imageOverview", "")
         }
         activity?.startActivity(intent, options.toBundle())
+        adapter?.notifyDataSetChanged()
     }
 }

@@ -10,17 +10,6 @@ class MyGalleryPresenter(private val view: MyGallery.View): MyGallery.Presenter,
     override val coroutineContext: CoroutineContext get() = Dispatchers.Main
     private var job: Job? = null
 
-    override fun getPicture(url: String): MyPictureEntity {
-        var myPicture = MyPictureEntity()
-
-        job = launch {
-            withContext(Dispatchers.IO) {
-                myPicture = MyPicturesDB.instance.mypicturesDAO().getByUrl(url)
-            }
-        }
-        return myPicture
-    }
-
     override fun getAllList() {
         job = launch {
             val myPicturesList = ArrayList<MyPictureEntity>()
@@ -32,12 +21,6 @@ class MyGalleryPresenter(private val view: MyGallery.View): MyGallery.Presenter,
             }
             val thePictureList = convertMyPicturesListInToDomain(myPicturesList)
             view.setAllList(thePictureList)
-        }
-    }
-
-    override fun deleteMyPicture(myPicture: MyPictureEntity) {
-        job = launch(Dispatchers.IO) {
-            MyPicturesDB.instance.mypicturesDAO().delete(myPicture)
         }
     }
 

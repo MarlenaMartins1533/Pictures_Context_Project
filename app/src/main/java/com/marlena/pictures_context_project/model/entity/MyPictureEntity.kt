@@ -16,5 +16,5 @@ class MyPictureEntity: Serializable {
     @ColumnInfo(name = "favorite")
     var favorite: Boolean = true
     @ColumnInfo(name = "desc")
-    var sensation: String = "sensation"
+    var sensations: String = "sensations"
 }

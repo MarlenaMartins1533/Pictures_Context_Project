@@ -3,9 +3,12 @@
     <color name="colorPrimary">#441C0B</color>
     <color name="colorPrimaryDark">#30100B</color>
     <color name="colorAccent">#FF5722</color>
+
     <color name="colorBackground">#ECE0CA</color>
     <color name="colorBackgroundTransparent">#00EECB65</color>
+
     <color name="colorBlack">#000000</color>
     <color name="colorWhite">#FFFFFF</color>
+    <color name="colorCream">#DA8066</color>
     <color name="colorTransparent">#0CFFC636</color>
 </resources>

@@ -10,6 +10,7 @@ import android.view.LayoutInflater
 import android.app.ActivityOptions
 import androidx.fragment.app.Fragment
 import com.marlena.pictures_context_project.R
+import com.marlena.pictures_context_project.data.Constants
 import kotlinx.android.synthetic.main.fragment_gallery_landscape.*
 import com.marlena.pictures_context_project.model.response.TheMovie
 import com.marlena.pictures_context_project.scenes.picture.PictureActivity
@@ -66,7 +67,7 @@ class MovieFragment : Fragment(),
         Toast.makeText(context, "Erro na solicitação", Toast.LENGTH_LONG).show()
     }
 
-    override fun openPictureFragment(name: String, url: String, overview: String, itemView: View) {
+    override fun openPictureFragment(movie: TheMovie, itemView: View) {
 
         val options = ActivityOptions.makeSceneTransitionAnimation(
             activity,
@@ -74,10 +75,11 @@ class MovieFragment : Fragment(),
         )
 
         val intent = Intent(context, PictureActivity::class.java).apply {
-            putExtra("imageName", name)
-            putExtra("imageUrl", url)
-            putExtra("imageOverview", overview)
+            putExtra("imageName", movie.title)
+            putExtra("imageUrl", (Constants.imageUrlMovie + movie.poster_path))
+            putExtra("imageOverview", movie.overview)
         }
         activity?.startActivity(intent, options.toBundle())
+        adapter?.notifyDataSetChanged()
     }
 }

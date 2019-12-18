@@ -7,7 +7,7 @@
     android:background="@color/colorBackground">
 
     <ImageView
-        android:id="@+id/img_home"
+        android:id="@+id/homeIMG"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="match_parent"
         android:layout_height="240dp"
@@ -15,69 +15,63 @@
         android:padding="8dp"
         android:paddingBottom="15dp"
         android:transitionName="image"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintDimensionRatio="1"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.0"
         tools:ignore="ContentDescription" />
 
     <ImageView
-        android:id="@+id/img_box_cat"
+        android:id="@+id/box_catIMG"
         android:layout_width="63dp"
         android:layout_height="64dp"
         android:elevation="3dp"
-        app:layout_constraintBottom_toBottomOf="@id/img_home"
-        app:layout_constraintEnd_toEndOf="@id/img_home"
+        app:layout_constraintBottom_toBottomOf="@id/homeIMG"
+        app:layout_constraintEnd_toEndOf="@id/homeIMG"
         app:layout_constraintHorizontal_bias="0.045"
-        app:layout_constraintStart_toStartOf="@id/img_home"
-        app:layout_constraintTop_toTopOf="@id/img_home"
+        app:layout_constraintStart_toStartOf="@id/homeIMG"
+        app:layout_constraintTop_toTopOf="@id/homeIMG"
         app:layout_constraintVertical_bias="0.551"
         tools:ignore="ContentDescription" />
 
     <ImageView
-        android:id="@+id/img_box_landscape"
+        android:id="@+id/box_landscapeIMG"
         android:layout_width="60dp"
         android:layout_height="67dp"
         android:elevation="3dp"
-        app:layout_constraintBottom_toBottomOf="@id/img_home"
-        app:layout_constraintEnd_toEndOf="@id/img_home"
+        app:layout_constraintBottom_toBottomOf="@id/homeIMG"
+        app:layout_constraintEnd_toEndOf="@id/homeIMG"
         app:layout_constraintHorizontal_bias="0.363"
-        app:layout_constraintStart_toStartOf="@id/img_home"
-        app:layout_constraintTop_toTopOf="@id/img_home"
+        app:layout_constraintStart_toStartOf="@id/homeIMG"
+        app:layout_constraintTop_toTopOf="@id/homeIMG"
         app:layout_constraintVertical_bias="0.551"
         tools:ignore="ContentDescription" />
 
     <ImageView
-        android:id="@+id/img_box_nasa"
+        android:id="@+id/box_myIMG"
         android:layout_width="44dp"
         android:layout_height="46dp"
         android:elevation="3dp"
-        app:layout_constraintBottom_toBottomOf="@id/img_home"
-        app:layout_constraintEnd_toEndOf="@id/img_home"
+        app:layout_constraintBottom_toBottomOf="@id/homeIMG"
+        app:layout_constraintEnd_toEndOf="@id/homeIMG"
         app:layout_constraintHorizontal_bias="0.704"
-        app:layout_constraintStart_toStartOf="@id/img_home"
-        app:layout_constraintTop_toTopOf="@id/img_home"
+        app:layout_constraintStart_toStartOf="@id/homeIMG"
+        app:layout_constraintTop_toTopOf="@id/homeIMG"
         app:layout_constraintVertical_bias="0.539"
         tools:ignore="ContentDescription" />
 
     <ImageView
-        android:id="@+id/img_box_movie"
+        android:id="@+id/box_movieIMG"
         android:layout_width="64dp"
         android:layout_height="56dp"
         android:elevation="3dp"
-        app:layout_constraintBottom_toBottomOf="@id/img_home"
-        app:layout_constraintEnd_toEndOf="@id/img_home"
+        app:layout_constraintBottom_toBottomOf="@id/homeIMG"
+        app:layout_constraintEnd_toEndOf="@id/homeIMG"
         app:layout_constraintHorizontal_bias="0.96"
-        app:layout_constraintStart_toStartOf="@id/img_home"
-        app:layout_constraintTop_toTopOf="@id/img_home"
+        app:layout_constraintStart_toStartOf="@id/homeIMG"
+        app:layout_constraintTop_toTopOf="@id/homeIMG"
         app:layout_constraintVertical_bias="0.543"
         tools:ignore="ContentDescription" />
 
     <Button
-        android:id="@+id/bt_text_home"
+        android:id="@+id/homeBTN"
         style="?android:attr/borderlessButtonStyle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -89,26 +83,67 @@
         android:textColor="@color/colorPrimary"
         android:textSize="20sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/img_home"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@id/homeIMG" />
 
     <TextView
-        android:id="@+id/txt_home"
+        android:id="@+id/homeTXT"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_margin="8dp"
+        android:layout_marginBottom="16dp"
         android:elevation="5dp"
         android:padding="16dp"
         android:text="@string/welcome_text"
         android:textAlignment="center"
         android:textColor="@color/colorPrimaryDark"
         android:textSize="16sp"
-        android:textStyle="bold|italic"
+        android:textStyle="italic"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/bt_text_home" />
+        app:layout_constraintTop_toBottomOf="@id/homeBTN" />
 
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:orientation="vertical"
+            app:layout_constraintTop_toBottomOf="@id/homeTXT">
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/textView_help"
+                android:background="@color/colorCream"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="8dp"
+                android:text="@string/help"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:elevation="7dp"
+                android:background="@color/colorPrimaryDark" />
+
+            <TextView
+                android:id="@+id/helpTXT"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="8dp"
+                android:padding="12dp"
+                android:text="@string/instructions"
+                android:textAlignment="center"
+                android:textColor="@color/colorPrimary"
+                android:textSize="14sp" />
+        </LinearLayout>
 </androidx.constraintlayout.widget.ConstraintLayout>

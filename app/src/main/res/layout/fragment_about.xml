@@ -8,19 +8,10 @@
     android:orientation="vertical">
 
     <ImageView
-        android:id="@+id/img_about"
+        android:id="@+id/aboutIMG"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/picture_about"
         tools:ignore="ContentDescription" />
 
-    <TextView
-        android:id="@+id/text_send"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginTop="8dp"
-        android:layout_marginEnd="8dp"
-        android:textAlignment="center"
-        android:textSize="20sp" />
 </LinearLayout>

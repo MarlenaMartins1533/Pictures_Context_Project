@@ -1,8 +1,10 @@
 package com.marlena.pictures_context_project.scenes.picture
 
+import android.content.DialogInterface
 import android.os.Bundle
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AlertDialog
 import com.squareup.picasso.Picasso
 import com.marlena.pictures_context_project.R
 import androidx.appcompat.app.AppCompatActivity
@@ -14,6 +16,7 @@ class PictureActivity : AppCompatActivity(), Picture.View {
 
     private lateinit var presenter: PicturePresenter
     private lateinit var thePicture: ThePicture
+    lateinit var sensations: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -24,6 +27,8 @@ class PictureActivity : AppCompatActivity(), Picture.View {
         val url = intent.getStringExtra("imageUrl") ?: ""
         val name = intent.getStringExtra("imageName") ?: ""
         val overview = intent.getStringExtra("imageOverview") ?: ""
+        sensations = presenter.getSensations(url)
+
         setTransitionName(pictureIMG, TRANSITION_IMAGE)
 
         if (url.isEmpty()) {
@@ -48,68 +53,98 @@ class PictureActivity : AppCompatActivity(), Picture.View {
             overviewTXT.visibility = View.VISIBLE
             textView_overview.visibility = View.VISIBLE
         }
-        if (presenter.getMyPictureByUrl(url) != null) {
+        if (sensations.isNotEmpty()) {
             my_pictureCBX.isChecked = true
             setVisibility(true)
+            sensationsTXT.text = sensations
         }
     }
 
-    private fun initListener(url: String, name: String) {
-        var favorite: Boolean
+private fun initListener(url: String, name: String) {
 
-        my_pictureCBX.setOnClickListener {
-            if (my_pictureCBX.isChecked) {
-                favorite = true
-                setVisibility(favorite)
-            } else {
-                favorite = false
-                setVisibility(favorite)
-
-            }
+    my_pictureCBX.setOnClickListener {
+        if (my_pictureCBX.isChecked) {
+            setVisibility(true)
+        } else {
+            showAlertDialog(
+                url,
+                "Atenção!",
+                "Você deseja remover essa imagem de My Gallery?"
+            )
         }
+    }
+    saveBTN.setOnClickListener {
+        sensations = getEdt()
 
-        saveBTN.setOnClickListener {
-            val sensation = getEdt()
-
-            if (sensation != "") {
-                sensationsTXT.text = sensation
-                sensationsEDT.hint = ""
-                thePicture = ThePicture(url, name, true, sensation)
-                presenter.insertMyPicture(thePicture)
-            }
+        if (sensations != "") {
+            sensationsTXT.text = sensations
+            sensationsEDT.hint = ""
+            thePicture = ThePicture(url, name)
+            presenter.insertMyPicture(thePicture, sensations)
             onBackPressed()
         }
     }
+}
 
-    private fun setVisibility(favorite: Boolean) {
-        if (favorite) {
-            saveBTN.visibility = View.VISIBLE
-            sensationsTXT.visibility = View.VISIBLE
-            sensationsEDT.visibility = View.VISIBLE
-            textView_sensations.visibility = View.VISIBLE
-
-        } else {
-            sensationsEDT.visibility = View.GONE
-            textView_sensations.visibility = View.GONE
-            saveBTN.visibility = View.GONE
+fun showAlertDialog(url: String, title: String, message: String) {
+    AlertDialog.Builder(this).apply {
+        setTitle(title)
+        setMessage(message)
+        setPositiveButton("APAGAR") { _: DialogInterface, _: Int ->
+            run {
+                presenter.deletePicture(url)
+                sensations = ""
+                setVisibility(false)
+            }
         }
+        setNegativeButton("Cancelar") { _: DialogInterface, _: Int ->
+            run {
+                my_pictureCBX.setChecked(true)
+                showMessage("Cancelado")
+            }
+        }
+        show()
     }
+}
 
-    override fun getEdt(): String {
-        val sensations = sensationsEDT.text.toString()
-        if (sensations == "") showMessage("Texto vazio!")
-        return sensations
+private fun setVisibility(check: Boolean) {
+    if (check)
+        View.VISIBLE.let {
+            my_pictureCBX.isChecked = check
+            textView_sensations.visibility = it
+            sensationsTXT.visibility = it
+            sensationsEDT.visibility = it
+            saveBTN.visibility = it
+        }
+    else {
+        if (sensations == "") {
+            textView_sensations.visibility = View.GONE
+            sensationsTXT.visibility = View.GONE
+        } else {
+            textView_sensations.visibility = View.VISIBLE
+            sensationsTXT.visibility = View.VISIBLE
+        }
+        my_pictureCBX.isChecked = check
+        sensationsEDT.visibility = View.GONE
+        saveBTN.visibility = View.GONE
     }
+}
 
-    override fun showMessage(message: String) {
-        Toast.makeText(this, message, Toast.LENGTH_LONG).show()
-    }
+override fun getEdt(): String {
+    val sensations = sensationsEDT.text.toString()
+    if (sensations.isEmpty()) showMessage("Texto vazio!")
+    return sensations
+}
 
-    override fun onBackPressed() {
-        super.onBackPressed()
-    }
+override fun showMessage(message: String) {
+    Toast.makeText(this, message, Toast.LENGTH_LONG).show()
+}
 
-    companion object {
-        const val TRANSITION_IMAGE = "image"
-    }
+override fun onBackPressed() {
+    super.onBackPressed()
+}
+
+companion object {
+    const val TRANSITION_IMAGE = "image"
+}
 }
