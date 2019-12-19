@@ -66,7 +66,7 @@ class LandscapeFragment : Fragment(), Landscape.View, PictureAdapter.Listener {
         Toast.makeText(context, getString(error), Toast.LENGTH_LONG).show()
     }
 
-    override fun openPictureFragment(url: String, name: String, itemView: View) {
+    override fun openPictureFragment(name: String, url: String, overview: String, itemView: View) {
 
         val options = ActivityOptions.makeSceneTransitionAnimation(
             activity,
@@ -74,8 +74,9 @@ class LandscapeFragment : Fragment(), Landscape.View, PictureAdapter.Listener {
         )
 
         val intent = Intent(context, PictureActivity::class.java).apply {
-            putExtra("imageUrl", url)
             putExtra("imageName", name)
+            putExtra("imageUrl", url)
+            putExtra("imageOverview", overview)
         }
         activity?.startActivity(intent, options.toBundle())
     }

@@ -45,7 +45,6 @@ dependencies {
 
     //Paginacao
     implementation "androidx.paging:paging-runtime:2.1.0"
-
     //Material Design
     implementation 'com.google.android.material:material:1.0.0'
     //CardView
@@ -58,6 +57,9 @@ dependencies {
     implementation 'com.squareup.retrofit2:retrofit:2.6.2'
     //Gson
     implementation 'com.squareup.retrofit2:converter-gson:2.6.2'
+    //Room
+    implementation 'androidx.room:room-runtime:2.2.2'
+    annotationProcessor 'androidx.room:room-compiler:2.2.2'
 
     testImplementation 'junit:junit:4.12'
     androidTestImplementation 'androidx.test.ext:junit:1.1.1'

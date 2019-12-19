@@ -1,6 +1,7 @@
 package com.marlena.pictures_context_project.ui.core
 
 import android.app.Application
+//import com.marlena.pictures_context_project.ui.persistence.MyPicturesDB
 import com.marlena.pictures_context_project.ui.repository.CatRepository
 import com.marlena.pictures_context_project.ui.repository.MovieRepository
 import com.marlena.pictures_context_project.ui.service.themovidbapi.MovieClient
@@ -11,6 +12,7 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
 
+//        MyPicturesDB.initialize(this)
         TheCatClient.initialize()
         MovieClient.initialize()
     }

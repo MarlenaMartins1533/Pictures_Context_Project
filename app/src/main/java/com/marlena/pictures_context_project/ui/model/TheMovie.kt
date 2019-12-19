@@ -2,11 +2,16 @@ package com.marlena.pictures_context_project.ui.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Movie(
+data class TheMovie(
 
     @SerializedName("title")
     val title: String,
 
     @SerializedName("poster_path")
-    val poster_path: String
+    val poster_path: String,
+
+    @SerializedName("overview")
+    val overview: String = "unknown"
+
+
 )
