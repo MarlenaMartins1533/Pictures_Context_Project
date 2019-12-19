@@ -6,7 +6,7 @@
     <uses-permission android:name="android.permission.INTERNET" />
 
     <application
-        android:name=".ui.core.App"
+        android:name=".core.App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher_new_icon"
         android:label="@string/nav_header_title"
@@ -15,7 +15,7 @@
         android:theme="@style/AppTheme"
         tools:ignore="AllowBackup,GoogleAppIndexingWarning">
         <activity
-            android:name=".ui.scenes.main.MainActivity"
+            android:name=".scenes.main.MainActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -24,7 +24,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".ui.scenes.picture.PictureActivity"
+            android:name=".scenes.picture.PictureActivity"
             android:theme="@style/AppTheme.NoActionBar">
         </activity>
     </application>
