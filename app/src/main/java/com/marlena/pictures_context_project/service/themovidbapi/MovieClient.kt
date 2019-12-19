@@ -11,8 +11,8 @@ class MovieClient {
 
     private lateinit var movieApi: MovieApi
 
-    fun callGetMovies(): MovieResponse? {
-        val call = movieApi.getMovies()
+    fun callGetMovies(page: Int): MovieResponse? {
+        val call = movieApi.getMovies("eng-US", page)
         try {
             val response = call.execute()
             if (response.isSuccessful) {

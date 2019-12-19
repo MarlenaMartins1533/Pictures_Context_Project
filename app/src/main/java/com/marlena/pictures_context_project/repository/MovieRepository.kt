@@ -5,8 +5,8 @@ import com.marlena.pictures_context_project.service.themovidbapi.MovieClient
 
 class MovieRepository {
 
-    fun getMovieList(): List<TheMovie>? {
-        val response = MovieClient.instance.callGetMovies()
+    fun getMovieList(page: Int): List<TheMovie>? {
+        val response = MovieClient.instance.callGetMovies(page)
         return response?.results
     }
 }

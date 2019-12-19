@@ -1,50 +1,52 @@
 package com.marlena.pictures_context_project.dataSource
 
-import androidx.paging.PageKeyedDataSource
 import com.marlena.pictures_context_project.core.App
-import com.marlena.pictures_context_project.model.response.CatResponse
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
 
-abstract class DataSource {
-    private var newPage = -1
+abstract class DataSource() {
 
-    var onScrollListener = object : RecyclerView.OnScrollListener() {
-        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-            super.onScrollStateChanged(recyclerView, newState)
+    private var page = 1
+    private var nextPage = -1
+    private var totalPage = 1
 
-            if (!lastPage && !recyclerView.canScrollVertically(1)) {
-                requestNextPage()
-            }
-        }
+    fun loadInitial(){
+        App.movieRepository.getMovieList(page)
+        nextPage = page + 1
     }
 
-    override fun loadInitial(
-        params: LoadInitialParams<Int>,
-        callback: LoadInitialCallback<Int, CatResponse>
-    ) {
-        newPage++
-        val call = App.catRepository.getCatList(params.requestedLoadSize)
-        call.enqueue(object : Callback<List<CatResponse>?>{
-            override fun onFailure(call: Call<List<CatResponse>?>, t: Throwable) {}
+    fun loadAfter(page: Int){
 
-            override fun onResponse(
-                call: Call<List<CatResponse>?>,
-                response: Response<List<CatResponse>?>
-            ) {
-                response.body()?.let {
-                    callback.onResult(it, null, newPage)
-                }
-            }
-        })
     }
 
-    override fun loadAfter(params: LoadParams<Int>, callback: LoadCallback<Int, CatResponse>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 
-    override fun loadBefore(params: LoadParams<Int>, callback: LoadCallback<Int, CatResponse>) {
-        TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
-    }
 }
+//    private var lastPage = false
+//    private var page = 0
+//
+//    var onScrollListener = object : RecyclerView.OnScrollListener() {
+//        override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+//            super.onScrollStateChanged(recyclerView, newState)
+//
+//            if (!lastPage && !recyclerView.canScrollVertically(1)) {
+//                requestNextPage()
+//            }
+//        }
+//    }
+//
+//    abstract fun showProgressBar()
+//    abstract fun hideProgressBar()
+//    abstract fun requestListData()
+//
+//    fun requestNextPage() {
+//        showProgressBar()
+//        lastPage = false
+//
+//        requestListData()
+//        page++
+//    }
+//
+//    fun endPagination() {
+//        page = 0
+//        lastPage = true
+//        hideProgressBar()
+//    }
+//}
