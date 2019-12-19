@@ -38,10 +38,6 @@ class PictureAdapter(
             itemView.itemCV.setOnClickListener {
                 listener.openPictureFragment(
                     pictureList[position],
-//                    pictureList[position].name,
-//                    pictureList[position].url,
-//                    "",
-//                    pictureList[position].sensations,
                     itemView
                 )
             }
