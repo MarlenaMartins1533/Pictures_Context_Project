@@ -16,25 +16,39 @@
     <string name="menu_about">About</string>
     <string name="desc_app">Aplicativo de imagens.</string>
 
-    <string name="welcome_text">
-        Expressar o que sente é necessário para a vida de qualquer ser.
-        Respeitar isso e tornar um hábito saudável pode mudá-lo para melhor!
-        Inspire-se com animais, pessoas, músicas, coisas.
-        Use esse aplicativo como forma de demonstrar seus sentimentos e sensações.
-        Anote tudo que sentir com carinho e faça disso um hábito!
-    </string>
-
     <string name="image_title">Título da Imagem</string>
     <string name="image_id">ID</string>
     <string name="communicate">More</string>
     <string name="error">Erro na solicitação</string>
-    <string name="name">Nome: </string>
-    <string name="url">Url: </string>
-    <string name="overview">Resumo: </string>
+    <string name="name">Nome:</string>
+    <string name="url">Url:</string>
+    <string name="overview">Resumo:</string>
     <string name="release_date">Lançamento: </string>
     <string name="scrolling">Mais informações</string>
     <string name="tip">P.S: Marque o Checkboxdas imagens que mais gostar para armazena-las aqui!</string>
-    <string name="whatreyoufeeling">O que você sente ao ver essa imagem?</string>
+    <string name="whatreyoufeeling">Descreva o que você sente?</string>
     <string name="sensations">Sensações:</string>
     <string name="save">Save</string>
+    <string name="help">Como utilizar esse app.</string>
+
+    <string name="welcome_text">
+        Expressar o que sente é necessário para a vida.
+        Respeitar e tornar isso um hábito saudável pode mudá-la(o) para melhor!
+        Inspire-se com animais, pessoas, músicas, coisas.
+        Use esse aplicativo como forma de demonstrar seus sentimentos e sensações.
+        Anote tudo que sentir com carinho e faça disso um hábito!
+        Sempre que tiver um momento faça uma avaliação das imagens disponíveis.
+        Boa distração, aproveite seu momento pessoal!
+    </string>
+
+    <string name="instructions">
+        Para aproveitar bem o conteúdo desse aplicativo.
+        Primeiro: Visualize os álbuns, escolha uma foto, deixe comentários
+        sobre aquela imagens. Salve na sua galeria pessoal.
+        Segundo: Vá na galeria de Filmes, fale um pouco sobre o filme caso tenha
+        assistido (prós e contras), caso não tenha, fale sobre suas expectativas.
+        Depois assista o filme, volte, veja e compare com o que esperava e
+        o que sentiu quando o assistiu. Você poderá editar sua galeria pessoal a
+        vontade, excluir imagens e mudar suas sensações. Aproveite!!
+    </string>
 </resources>
